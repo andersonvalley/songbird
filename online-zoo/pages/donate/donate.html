@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>online-zoo</title>
-  <link rel="icon" href="assets/icons/logo.svg">
+  <link rel="icon" href="../../assets/icons/logo.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,38 +93,63 @@
           <div class="donation__price">
             <p class="donation__price-pr">Amount</p>
             <ul class="donation__progress progress">
-              <li class="progress__item"><span class="progress__item-price">5000</span></li>
-              <li class="progress__item"><span class="progress__item-price">2000</span></li>
-              <li class="progress__item progress__item-active"><span class="progress__item-price">5000</span></li>
-              <li class="progress__item"><span class="progress__item-price">1000</span></li>
-              <li class="progress__item"><span class="progress__item-price">500</span></li>
-              <li class="progress__item"><span class="progress__item-price">250</span></li>
-              <li class="progress__item"><span class="progress__item-price">100</span></li>
-              <li class="progress__item"><span class="progress__item-price">50</span></li>
-              <li class="progress__item"><span class="progress__item-price">25</span></li>
+              <li class="progress__item">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">5000</span>
+              </li>
+              <li class="progress__item">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">2000</span>
+              </li>
+              <li class="progress__item progress__item-active">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">1000</span>
+              </li>
+              <li class="progress__item">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">500</span>
+              </li>
+              <li class="progress__item">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">250</span>
+              </li>
+              <li class="progress__item">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">100</span>
+              </li>
+              <li class="progress__item">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">50</span>
+              </li>
+              <li class="progress__item">
+                <span class="progress__item-point"></span>
+                <span class="progress__item-price">25</span>
+              </li>
             </ul>
           </div>
-
-          <div class="donation__another">
-            <input type="number" placeholder="Another amount">
-          </div>
-
-          <div class="donation__time">
-            <div class="donation__group">
-              <input type="radio" class="custom-checkbox" id="monthly" name="donation" value="yes">
-              <label for="monthly">Monthly</label>
+          <form action="#">
+            <div class="donation__another">
+              <input type="number" minlength="4" placeholder="Another amount">
             </div>
-            <div class="donation__group">
-              <input checked type="radio" class="custom-checkbox" id="once" name="donation" value="yes">
-              <label for="once">Once</label>
+
+            <div class="donation__time">
+              <div class="donation__group">
+                <input type="radio" class="custom-checkbox" id="monthly" name="donation" value="monthly">
+                <label for="monthly">Monthly</label>
+              </div>
+              <div class="donation__group once">
+                <input checked type="radio" class="custom-checkbox" id="once" name="donation" value="once">
+                <label for="once">Once</label>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <button class="btn donation__btn">Feed a friend now</button>
-          </div>
+            <div>
+              <button type="submit" class="btn donation__btn">Feed a friend now</button>
+            </div>
 
-          <span class="dontaion__share">Share with your friends on social networks </span>
+            <p class="dontaion__share">Share with your friends on social networks </p>
+
+          </form>
 
         </article>
       </div>
