@@ -69,8 +69,8 @@
   width: 14px;
   height: 14px;
   position: absolute;
-  right: -20px;
-  top: 46px;
+  right: -18px;
+  top: 53px;
 }
 .donation__days {
   font-weight: 500;
@@ -90,6 +90,9 @@
 }
 .donation__img img {
   width: 284px;
+  position: relative;
+  left: -8px;
+  top: 2px;
 }
 .donation__price span {
   font-weight: 400;
@@ -103,13 +106,13 @@
   font-size: 16px;
   line-height: 84%;
   color: #000000;
-  margin-bottom: 18px;
+  margin-bottom: 23px;
 }
 .donation__group:last-child {
-  margin-left: 50px;
+  margin-left: 76px;
 }
 .donation__another {
-  margin-top: 120px;
+  margin-top: 98px;
   position: relative;
   width: 268px;
   position: relative;
@@ -157,6 +160,14 @@
   line-height: 140%;
   color: #929699;
 }
+.donation__another input:active, .donation__another input:focus {
+  border: 1px solid #4b9200;
+  color: #4b9200;
+}
+.donation__another input:invalid {
+  color: #d31414;
+  border-color: #d31414;
+}
 .donation__btn {
   width: 298px;
   height: 54px;
@@ -173,7 +184,7 @@
 }
 .donation span {
   font-weight: 400;
-  line-height: 80%;
+  line-height: 89%;
   color: #333b41;
   position: relative;
   left: 46%;
@@ -194,7 +205,7 @@
   border-radius: 2px;
   width: 100%;
   height: 27px;
-  padding: 0 26px;
+  padding: 0 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -209,20 +220,28 @@
   z-index: 0;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
 }
 .progress__item {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  position: relative;
+  top: -3px;
+}
+.progress__item-point {
   width: 10px;
   height: 10px;
-  background: #ffee2e;
   border-radius: 50%;
-  position: relative;
-  z-index: 10;
+  z-index: 20;
   cursor: pointer;
+  background: #ffee2e;
 }
-.progress__item span {
+.progress__item .progress__item-price {
   position: relative;
-  top: 30px;
-  left: calc(50% - 20px);
+  top: 37px;
+  left: calc(50% - 11px);
+  margin-right: 10px;
   transform: translatX(-50%);
   font-weight: 500;
   font-size: 2.6rem;
@@ -239,26 +258,28 @@
 .progress__item-active .progress__item-price {
   color: #fe9013;
 }
-.progress__item-active::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid #fe9013;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-}
 .progress__item-active::after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: calc(50% + 2px);
+  left: calc(50% - 2px);
   transform: translate(-50%, -50%);
   border: 2px solid #fe9013;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  z-index: 10;
+}
+.progress__item-active::before {
+  content: "";
+  position: absolute;
+  top: calc(50% + 2px);
+  left: calc(50% - 2px);
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fe9013;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
 }
 
@@ -303,8 +324,25 @@ input[type=number]:focus {
 }
 
 .custom-checkbox:checked + label::before {
-  border: 1px solid #fff;
+  border: 3px solid #fff;
   background-color: #fe9013;
   padding: 5px;
   position: relative;
+}
+
+.dontaion__share {
+  width: 100%;
+  text-align: center;
+  line-height: 140%;
+  color: #333b41;
+}
+
+label {
+  line-height: 140%;
+  color: #333b41;
+}
+
+.once {
+  position: relative;
+  left: -24px;
 }/*# sourceMappingURL=donate.css.map */
