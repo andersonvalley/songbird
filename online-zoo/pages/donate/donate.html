@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>online-zoo</title>
+  <link rel="icon" href="assets/icons/logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/normalize.css">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="donate.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container container">
+      <div class="header__inner">
+        <div class="header__logo logo">
+          <a class="logo__link" href="../../index.html">
+            <span class="logo__text">PetStory online</span>
+          </a>
+        </div>
+
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="../../index.html">About</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Map</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Zoos</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link nav__link-active" href="donate.html">Donate</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <a class="header__link nav__link" href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online"
+        target="_blank" rel="noopener noreferrer">Designed by ©</a>
+
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <img src="../../assets/images/panda_bg.jpg" alt="pand bg">
+      <h1 class="hidden">PetStory Online</h1>
+    </div>
+
+    <section class="feed">
+      <div class="container feed__container">
+        <h2 class="feed__title">THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!</h2>
+        <p class="feed__descr">Even though the Zoo has been able to reopen, we are at a greatly reduced capacity with
+          educational programs and
+          public and private events cancelled or postponed for additional months. We need you now more than ever to help
+          ensure that we overcome these challenges. We have been actively raising funds in the community, and we are
+          grateful for the generosity. But much more support is still needed, and we need your help! Please consider a
+          gift today – no matter what size – to help us sustain our mission.</p>
+
+        <span class="feed__donation">Donation Information</span>
+
+        <article class="donation">
+          <h3 class="donation__title">Pick and feed a friend</h3>
+          <p class="donation__descr">We know the animals bring you joy, and in these extraordinary times, we’re glad.
+          </p>
+
+          <div class="donation__inner">
+            <div class="donation__info">
+              <span class="donation__days">4</span>
+              <span class="donation__count">Panda diet for the day.</span>
+            </div>
+
+            <div class="donation__img">
+              <img src="../../assets/images/panda.svg" alt="panda icon">
+            </div>
+          </div>
+
+          <div class="donation__price">
+            <p class="donation__price-pr">Amount</p>
+            <ul class="donation__progress progress">
+              <li class="progress__item"><span class="progress__item-price">5000</span></li>
+              <li class="progress__item"><span class="progress__item-price">2000</span></li>
+              <li class="progress__item progress__item-active"><span class="progress__item-price">5000</span></li>
+              <li class="progress__item"><span class="progress__item-price">1000</span></li>
+              <li class="progress__item"><span class="progress__item-price">500</span></li>
+              <li class="progress__item"><span class="progress__item-price">250</span></li>
+              <li class="progress__item"><span class="progress__item-price">100</span></li>
+              <li class="progress__item"><span class="progress__item-price">50</span></li>
+              <li class="progress__item"><span class="progress__item-price">25</span></li>
+            </ul>
+          </div>
+
+          <div class="donation__another">
+            <input type="number" placeholder="Another amount">
+          </div>
+
+          <div class="donation__time">
+            <div class="donation__group">
+              <input type="radio" class="custom-checkbox" id="monthly" name="donation" value="yes">
+              <label for="monthly">Monthly</label>
+            </div>
+            <div class="donation__group">
+              <input checked type="radio" class="custom-checkbox" id="once" name="donation" value="yes">
+              <label for="once">Once</label>
+            </div>
+          </div>
+
+          <div>
+            <button class="btn donation__btn">Feed a friend now</button>
+          </div>
+
+          <span class="dontaion__share">Share with your friends on social networks </span>
+
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__inner">
+        <div class="footer__logo logo">
+          <a class="logo__link" href="../../index.html">
+            <span class="logo__text">PetStory online</span>
+          </a>
+        </div>
+
+        <div class="footer__subscribe">
+          <span>Subscribe to our news</span>
+          <form action="#">
+            <input minlength="5" placeholder="Enter your email" type="email" required>
+            <button class="btn">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <a href="donate.html" class="btn footer__btn">
+        donate for volunteers
+      </a>
+
+      <div class="footer__wrapper">
+        <ul class="footer__social social">
+          <li class="social__item">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <div class="social__icon">
+                <img src="../../assets/icons/face.svg" alt="facebook icon">
+              </div>
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <div class="social__icon">
+                <img src="../../assets/icons/twitter.svg" alt="twitter icon">
+              </div>
+              <span>Twitter</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <div class="social__icon">
+                <img src="../../assets/icons/insta.svg" alt="instagram icon">
+              </div>
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <div class="social__icon">
+                <img src="../../assets/icons/yout.svg" alt="youtube icon">
+              </div>
+              <span>Youtube</span>
+            </a>
+          </li>
+        </ul>
+
+        <nav class="footer__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="../../index.html">About</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Map</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Zoos</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Contact us</a>
+            </li>
+          </ul>
+        </nav>
+
+        <a href="#" class="footer__copyright">
+          <span>Designed by Alisa Samborskaya</span>
+          <span>©RSSchool & ©Yem Digital 2021</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

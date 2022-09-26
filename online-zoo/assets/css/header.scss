@@ -1,0 +1,98 @@
+.header {
+  background: #000000;
+  backdrop-filter: blur(2px);
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    color: #fff;
+    font-weight: 500;
+    line-height: 140%;
+  }
+
+  &__logo {
+    &:not(:last-child) {
+      margin-right: 62px;
+    }
+  }
+}
+
+//logo
+.logo {
+  &__link {
+    border: 1.18841px solid #ffffff;
+    width: 82px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 120%;
+    color: #fff;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 9.5px;
+      top: 20px;
+      background-image: url('../../assets/icons/logo.svg');
+      background-repeat: no-repeat;
+      height: 20px;
+      width: 13px;
+    }
+  }
+}
+
+//nav
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 59px;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    color: #fff;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      color: #f9804b;
+    }
+
+    &-active {
+      color: #f9804b;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
