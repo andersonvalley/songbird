@@ -54,12 +54,22 @@ ul {
 
 .btn {
   font-weight: 500;
-  font-size: 1.6rem;
   line-height: 140%;
   text-align: center;
   text-transform: uppercase;
   border: none;
   color: #fff;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+.btn:hover {
+  background: #e47209;
+}
+.btn:active {
+  background: #4b9200;
+}
+.btn:disabled {
+  background: #767474;
 }
 
 .hidden {
