@@ -652,11 +652,11 @@
     left: -7px;
   }
   .hero__container {
-    right: -12.5%;
-    top: 40.6%;
+    right: -16.5%;
+    top: 44.6%;
   }
   .hero__bg {
-    height: 419px;
+    height: 451px;
   }
   .hero__btn {
     left: -397px;
@@ -871,7 +871,7 @@
     top: 60.6%;
   }
   .hero__bg {
-    height: 267px;
+    height: 300px;
   }
   .hero__btn {
     left: -63%;
@@ -1058,7 +1058,7 @@
 @media (max-width: 320px) {
   .hero__container {
     right: -65.1%;
-    top: 60.6%;
+    top: 64.6%;
   }
   .feed__container {
     padding: 20px 11px 1px 19px;
