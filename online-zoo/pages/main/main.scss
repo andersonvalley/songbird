@@ -647,6 +647,11 @@
     display: none;
   }
 
+  .backstage__text {
+    position: relative;
+    top: 3px;
+  }
+
   .backstage__img {
     margin-right: 31px;
     min-width: 455px;
