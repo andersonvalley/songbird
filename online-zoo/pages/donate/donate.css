@@ -613,6 +613,34 @@ label {
     height: 27px;
   }
   .progress__item-price {
-    top: 32px !important;
+    top: 27px !important;
+  }
+  .donation__another {
+    width: 177px;
+    margin-top: 48px;
+  }
+  .donation__time {
+    top: -1px;
+    margin-bottom: 34px;
+  }
+  .donation__time {
+    top: -1px;
+    margin-bottom: 27px;
+  }
+  .dontaion__share {
+    width: 101%;
+  }
+  .donation {
+    padding: 10px 0 20px 0px;
+  }
+  .footer__container {
+    padding: 0 10px;
+  }
+  .footer__social {
+    right: 50%;
+    top: -159px;
+  }
+  .footer__copyright {
+    top: -33px;
   }
 }/*# sourceMappingURL=donate.css.map */
