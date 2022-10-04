@@ -416,7 +416,7 @@ label {
 }
 @media (max-width: 999px) {
   .hero img {
-    height: 334px;
+    height: 367px;
     -o-object-position: 37% 50%;
        object-position: 37% 50%;
   }
@@ -524,7 +524,7 @@ label {
 }
 @media (max-width: 639px) {
   .hero img {
-    height: 187px;
+    height: 220px;
   }
   .burger {
     right: -14px;

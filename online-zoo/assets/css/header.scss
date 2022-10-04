@@ -113,6 +113,11 @@
 }
 
 @media (max-width: 999px) {
+  .header {
+    position: fixed;
+    width: 100%;
+  }
+
   .burger {
     display: flex;
     align-items: center;
