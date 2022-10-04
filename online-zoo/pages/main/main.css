@@ -989,7 +989,8 @@
     top: -14px;
   }
   .feed__how-list {
-    margin-bottom: -16px;
+    margin-bottom: 27px;
+    width: 100%;
   }
   .feed {
     padding: 21px 0 0px 0;
@@ -1046,5 +1047,9 @@
   .hero__container {
     right: -65.1%;
     top: 60.6%;
+  }
+  .feed__container {
+    padding: 20px 11px 1px 19px;
+    width: 300px;
   }
 }/*# sourceMappingURL=main.css.map */
