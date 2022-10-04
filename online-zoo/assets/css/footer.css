@@ -151,4 +151,143 @@
 .footer__subscribe input:valid + button {
   border: 1px solid #4b9200;
   color: #4b9200;
+}
+
+@media (max-width: 1499px) {
+  .footer__container {
+    padding: 0 43px;
+  }
+  .social__item {
+    margin-bottom: 9.4px;
+  }
+  .footer__nav {
+    left: 81px;
+    top: -11px;
+  }
+  .footer__subscribe {
+    top: 15px;
+    left: -10px;
+  }
+  .footer__copyright {
+    position: relative;
+    right: -25px;
+    top: 2px;
+  }
+}
+@media (max-width: 999px) {
+  .footer {
+    position: relative;
+    height: 282px;
+  }
+  .footer__container {
+    padding: 0 20px;
+  }
+  .footer__inner {
+    padding-top: 12px;
+    margin-bottom: 33px;
+  }
+  .footer__subscribe {
+    display: none;
+  }
+  .footer__social {
+    position: absolute;
+    right: 5px;
+    top: 12px;
+  }
+  .footer__social span {
+    display: none;
+  }
+  .footer .social__item {
+    margin-bottom: 20px;
+  }
+  .footer__nav {
+    left: 0px;
+    top: -4px;
+  }
+  .footer .nav__item {
+    margin-right: 38px;
+  }
+  .footer__copyright {
+    position: relative;
+    right: 0px;
+    top: 8px;
+  }
+}
+@media (max-width: 639px) {
+  .footer .logo__link {
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  .footer .logo__text::before {
+    left: 71.5px;
+    top: -3px;
+  }
+  .footer__logo {
+    width: 100%;
+  }
+  .footer__social {
+    right: 50%;
+    top: 72px;
+    transform: translateX(50%);
+    flex-direction: row;
+  }
+  .social__item {
+    width: 42px;
+  }
+  .footer__btn {
+    width: 100%;
+  }
+  .footer__container {
+    padding: 0 10px;
+  }
+  .footer__wrapper {
+    height: 76px;
+  }
+  .footer__copyright {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    top: 60%;
+    right: 6px;
+  }
+  .footer .nav__item {
+    margin-right: 30px;
+  }
+  .footer__inner {
+    padding-top: 19px;
+    margin-bottom: 58px;
+  }
+  .footer {
+    height: 331px;
+  }
+  .footer__nav {
+    left: 10px;
+    top: 8px;
+  }
+  .nav__link {
+    white-space: nowrap;
+  }
+  .footer {
+    overflow: hidden;
+  }
+  .social__item:first-child {
+    position: relative;
+    left: -12px;
+  }
+  .social__item:last-child {
+    position: relative;
+    left: 29px;
+  }
+  .social__item:nth-child(3) {
+    position: relative;
+    left: 15px;
+  }
 }/*# sourceMappingURL=footer.css.map */

@@ -76,4 +76,10 @@ ul {
   display: none;
   opacity: 0;
   visibility: hidden;
+}
+
+@media (max-width: 1599px) {
+  .container {
+    padding: 0 30px;
+  }
 }/*# sourceMappingURL=styles.css.map */

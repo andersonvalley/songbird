@@ -255,6 +255,9 @@
   content: "$";
   font-size: 1.6rem;
 }
+.progress__item-active {
+  pointer-events: none;
+}
 .progress__item-active .progress__item-price {
   color: #fe9013;
 }
@@ -345,4 +348,271 @@ label {
 .once {
   position: relative;
   left: -24px;
+}
+
+@media (max-width: 1499px) {
+  .hero img {
+    height: 390px;
+  }
+  .feed {
+    padding: 40px 0 30px 0;
+  }
+  .feed__title {
+    max-width: 89%;
+    margin-bottom: 30px;
+  }
+  .feed__descr {
+    margin-bottom: 46px;
+  }
+  .feed__donation {
+    margin-bottom: 39px;
+  }
+  .donation {
+    padding: 21px 44px 45px 47px;
+  }
+  .donation__title {
+    margin-bottom: 10px;
+    left: -9px;
+  }
+  .donation__descr {
+    margin-bottom: 57px;
+  }
+  .donation span {
+    left: 44%;
+  }
+  .donation__progress {
+    margin: 0 auto;
+    width: 95.4%;
+  }
+  .donation__price-pr {
+    padding-left: 18px;
+  }
+  .progress {
+    padding: 0;
+  }
+  .progress__item:nth-child(1) {
+    display: none;
+  }
+  .progress__item {
+    width: 32px;
+  }
+  .progress__item-price {
+    left: calc(50% - 4px) !important;
+  }
+  .footer__container {
+    padding: 0 30px;
+  }
+  .footer__subscribe {
+    left: -36px;
+    top: 17px;
+  }
+  .footer__copyright {
+    right: 1px;
+  }
+  .footer__wrapper {
+    position: relative;
+    left: -1px;
+  }
+}
+@media (max-width: 999px) {
+  .hero img {
+    height: 334px;
+    -o-object-position: 37% 50%;
+       object-position: 37% 50%;
+  }
+  .feed {
+    padding: 32px 0 45px 0;
+  }
+  .feed__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    max-width: 100%;
+    margin-bottom: 19px;
+  }
+  .feed__descr {
+    margin-bottom: 29px;
+  }
+  .feed__donation {
+    margin-bottom: 29px;
+  }
+  .feed__container {
+    padding: 0 20px;
+  }
+  .donation {
+    padding: 21px 0 31px 0px;
+  }
+  .donation__title {
+    left: 0px;
+    top: 10px;
+    margin-bottom: 31px;
+  }
+  .donation__descr {
+    max-width: 85%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .donation span {
+    top: 72px;
+    left: 46%;
+  }
+  .donation__img img {
+    top: 50px;
+  }
+  .donation__info::after {
+    top: 99px;
+  }
+  .donation__inner {
+    margin-bottom: 90px;
+  }
+  .donation__price-pr {
+    padding-left: 10px;
+    margin-bottom: 13px;
+  }
+  .donation__progress {
+    width: 100%;
+    padding: 0 23px;
+  }
+  .progress__item:nth-child(7) {
+    display: none;
+  }
+  .progress__item:nth-child(6) {
+    display: none;
+  }
+  .progress__item {
+    top: -50px;
+  }
+  .progress__item-price {
+    top: 83px !important;
+  }
+  .progress__item-active::before {
+    top: calc(50% + 49px);
+    left: calc(50% - 1px);
+  }
+  .progress__item-active::after {
+    top: calc(50% + 48px);
+    left: calc(50% - 1px);
+  }
+  .donation__another {
+    width: 183px;
+  }
+  .donation__another input {
+    width: 181px;
+    height: 41px;
+    padding-left: 5px;
+  }
+  .donation__another::after {
+    top: 11px;
+    font-size: 1.9rem;
+    font-weight: 700;
+  }
+  .donation__time {
+    top: 5px;
+    margin-bottom: 34px;
+  }
+  .donation__share {
+    position: relative;
+    left: -2px;
+  }
+  .footer__container {
+    padding: 0 20px;
+  }
+  .footer__social {
+    right: -14px;
+    top: -186px;
+  }
+}
+@media (max-width: 639px) {
+  .hero img {
+    height: 187px;
+  }
+  .burger {
+    right: -14px;
+    top: -1px;
+  }
+  .feed__title {
+    font-size: 24px;
+  }
+  .feed__container {
+    padding: 0 10px;
+  }
+  .feed__donation {
+    font-size: 24px;
+  }
+  .feed__descr {
+    line-height: 137%;
+  }
+  .donation__title {
+    font-size: 24px;
+    margin-bottom: 21px;
+  }
+  .donation {
+    padding: 10px 0 31px 0px;
+  }
+  .donation__descr {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 125%;
+  }
+  .donation__days {
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+  .donation__count {
+    font-size: 9.02255px;
+    width: 100px;
+  }
+  .donation__info {
+    margin-right: 48px;
+    position: relative;
+  }
+  .donation span {
+    top: 28px;
+    left: 47%;
+  }
+  .donation__info::after {
+    right: -5px;
+    top: 44px;
+  }
+  .donation__img img {
+    top: 17px;
+  }
+  .donation__inner {
+    margin-bottom: 22px;
+  }
+  .donation__price-pr {
+    padding-left: 1px;
+    margin-bottom: 15px;
+  }
+  .progress {
+    height: 15px;
+  }
+  .progress__item {
+    top: -3px;
+  }
+  .donation__progress {
+    padding: 0 6px;
+  }
+  .progress__item .progress__item-price {
+    font-size: 1.4rem;
+  }
+  .progress__item-point {
+    width: 5px;
+    height: 5px;
+  }
+  .progress__item-active::before {
+    top: calc(50% + 3px);
+    left: calc(50% - 1px);
+    width: 15px;
+    height: 15px;
+  }
+  .progress__item-active::after {
+    top: calc(50% + 3px);
+    left: calc(50% - 1px);
+    width: 27px;
+    height: 27px;
+  }
+  .progress__item-price {
+    top: 32px !important;
+  }
 }/*# sourceMappingURL=donate.css.map */
