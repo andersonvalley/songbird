@@ -528,6 +528,10 @@
   .backstage::after {
     display: none;
   }
+  .backstage__text {
+    position: relative;
+    top: 3px;
+  }
   .backstage__img {
     margin-right: 31px;
     min-width: 455px;
@@ -1036,11 +1040,19 @@
     right: -55.1%;
     top: 60.6%;
   }
+  .feed__container {
+    padding: 20px 11px 1px 19px;
+    width: 320px;
+  }
 }
 @media (max-width: 340px) {
   .hero__container {
     right: -65.1%;
     top: 60.6%;
+  }
+  .feed__container {
+    padding: 20px 11px 1px 19px;
+    width: 310px;
   }
 }
 @media (max-width: 320px) {
