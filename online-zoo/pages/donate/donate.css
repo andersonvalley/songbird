@@ -228,6 +228,7 @@
   cursor: pointer;
   position: relative;
   top: -3px;
+  transition: 200ms ease-in-out;
 }
 .progress__item-point {
   width: 10px;
@@ -473,10 +474,10 @@ label {
     width: 100%;
     padding: 0 23px;
   }
-  .progress__item:nth-child(7) {
+  .progress__item:nth-child(3) {
     display: none;
   }
-  .progress__item:nth-child(6) {
+  .progress__item:nth-child(2) {
     display: none;
   }
   .progress__item {
