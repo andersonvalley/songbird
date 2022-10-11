@@ -37,7 +37,7 @@ function petsSlider() {
           .setAttribute('src', data[indexes[index]].petsIcon)
         item.querySelector('.pets__item-country').innerHTML = data[indexes[index]].text
         item.querySelector('.pets__item-title').innerHTML = data[indexes[index]].name
-      }, 500)
+      }, 200)
 
       setTimeout(() => {
         item.style.opacity = '1'
