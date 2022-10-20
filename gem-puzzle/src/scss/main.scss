@@ -1,33 +1,22 @@
 @import "settings/vars";
-@import "settings/breakpoints";
+@import "game";
 
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: $font-family;
-  font-size: 1.6rem;
-  background-color: #fff;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+	margin: 0;
+	padding: 0;
+	font-family: $font-family;
+	font-size: 1.6rem;
+	background-color: #fff;
 }
 
 ul,
@@ -40,49 +29,19 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 .container {
-  max-width: 1180px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-.btn-reset {
-  border: none;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.input-reset {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
-}
-
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(0 0 0 0);
+	max-width: 1280px;
+	padding: 0 15px;
+	margin: 50px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
