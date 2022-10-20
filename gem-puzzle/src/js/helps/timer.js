@@ -1,4 +1,4 @@
-export default function startTimer(minutes, second) {
+export default function timer(minutes, second) {
   const sec = document.querySelector('.puzzle__sec');
   const min = document.querySelector('.puzzle__min');
   const stopGameBtn = document.querySelector('#stop');
@@ -38,7 +38,7 @@ export default function startTimer(minutes, second) {
 
     if (stopGameBtn.innerHTML === 'continue') {
       console.log('yes');
-      startTimer(min.innerHTML, sec.innerHTML);
+      timer(min.innerHTML, sec.innerHTML);
       stopGameBtn.textContent = 'Stop';
     }
 

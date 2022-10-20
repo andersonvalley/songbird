@@ -1,14 +1,14 @@
-import renderItems from './renderItems';
-import startTimer from './helps/startTimer';
+import renderItemsGameFiled from '../renderItemsGameFiled';
+import timer from '../helps/timer';
 
 export default function startGame(initial) {
   const stopGameBtn = document.querySelector('#stop');
 
-  renderItems();
+  renderItemsGameFiled();
 
   if (initial) {
     stopGameBtn.classList.add('puzzle__btn-gray');
     stopGameBtn.innerHTML = 'Stop';
-    startTimer();
+    timer();
   }
 }

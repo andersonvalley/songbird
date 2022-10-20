@@ -26,12 +26,12 @@ const html = `
     <div class="game__size">
       Other sizes:
       <ul class="game__size-list">
-        <li class="game__size-item">3x3</li>
-        <li class="game__size-item">4x4</li>
-        <li class="game__size-item">5x5</li>
-        <li class="game__size-item">6x6</li>
-        <li class="game__size-item">7x7</li>
-        <li class="game__size-item">8x8</li>
+        <li class="game__size-item" data-size="9">3x3</li>
+        <li class="game__size-item" data-size="16">4x4</li>
+        <li class="game__size-item" data-size="25">5x5</li>
+        <li class="game__size-item" data-size="36">6x6</li>
+        <li class="game__size-item" data-size="49">7x7</li>
+        <li class="game__size-item" data-size="64">8x8</li>
       </ul>
     </div>
   </div>

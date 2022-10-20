@@ -1,4 +1,4 @@
-export default function game() {
+export default function gameLogic() {
   const gameItems = document.querySelectorAll('.game__item');
 
   gameItems.forEach((item) => {
