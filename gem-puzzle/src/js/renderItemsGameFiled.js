@@ -1,9 +1,11 @@
-import randomNumbers from './helps/randomNumbers';
+// import randomNumbers from './helps/randomNumbers';
 
-export default function renderItemsGameFiled(numberOfPieces = '16') {
+export default function renderItemsGameFiled(mixedElements, rows) {
   const gameListNode = document.querySelector('.game__list');
 
-  switch (numberOfPieces) {
+  document.querySelector('.game__frame-text').innerHTML = `${rows}x${rows}`;
+
+  switch (String(mixedElements.length)) {
     case '9':
       gameListNode.className = 'game__list game__list-3x3';
       break;
@@ -29,10 +31,8 @@ export default function renderItemsGameFiled(numberOfPieces = '16') {
       break;
   }
 
-  const htmlItem = (number) => `<li data-number="${number}" class="${!number ? 'game__item game__item-empty' : 'game__item'}">${!number ? '' : number}</li>`;
-
-  const mixedElements = randomNumbers(numberOfPieces);
+  const htmlItem = (number, index) => `<li data-number="${number}" data-index="${index}" data-next="${mixedElements[+index + +rows]}" data-prev="${mixedElements[+index - +rows]}" class="${!number ? 'game__item game__item-empty' : 'game__item'}">${!number ? '' : number}</li>`;
 
   gameListNode.innerHTML = '';
-  gameListNode.insertAdjacentHTML('beforeend', mixedElements.map((item) => htmlItem(item)).join(''));
+  gameListNode.insertAdjacentHTML('beforeend', mixedElements.map((item, index) => htmlItem(item, index)).join(''));
 }

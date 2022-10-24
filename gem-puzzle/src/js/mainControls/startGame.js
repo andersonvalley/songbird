@@ -1,14 +1,14 @@
 import renderItemsGameFiled from '../renderItemsGameFiled';
-import timer from '../helps/timer';
+import gameLogic from '../gameLogic';
 
-export default function startGame(initial) {
+export default function startGame(initial, mixedElements, rows) {
   const stopGameBtn = document.querySelector('#stop');
 
-  renderItemsGameFiled();
+  renderItemsGameFiled(mixedElements, rows);
+  gameLogic(mixedElements, rows);
 
   if (initial) {
     stopGameBtn.classList.add('puzzle__btn-gray');
     stopGameBtn.innerHTML = 'Stop';
-    timer();
   }
 }

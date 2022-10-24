@@ -1,50 +1,53 @@
-export default function timer(minutes, second) {
-  const sec = document.querySelector('.puzzle__sec');
-  const min = document.querySelector('.puzzle__min');
-  const stopGameBtn = document.querySelector('#stop');
-
-  let secs;
-  let mins;
-
-  if (second === undefined && minutes === undefined) {
-    mins = 0;
-    secs = 0;
-  } else {
-    secs = +second;
-    mins = +minutes;
+export function stopTimer(timerId) {
+  if (timerId !== undefined) {
+    clearInterval(timerId);
+    // document.querySelector('.puzzle__sec').innerHTML = '0';
+    // document.querySelector('.puzzle__min').innerHTML = '0';
   }
+}
 
-  let timerId = setTimeout(function tick() {
-    secs += 1;
+export default function timer(min = 0, sec = 0) {
+  // const startGameBtn = document.querySelector('#start');
+  const secondNode = document.querySelector('.puzzle__sec');
+  const minuteNode = document.querySelector('.puzzle__min');
 
-    if (secs === 59) {
-      mins += 1;
+  let seconds = +sec;
+  let minutes = +min;
 
-      if (String(mins).length === 1) {
-        min.innerHTML = `0${mins}`;
-      } else {
-        min.innerHTML = mins;
-      }
-      secs = 0;
+  return setInterval(() => {
+    // timerId = setTimeout(tick, 1000);
+
+    seconds += 1;
+
+    if (String(seconds).length === 1) {
+      secondNode.innerHTML = `0${seconds}`;
+    } else {
+      secondNode.innerHTML = seconds;
     }
 
-    sec.innerHTML = secs;
+    if (seconds === 59) {
+      seconds = 0;
+      minutes += 1;
 
-    timerId = setTimeout(tick, 1000);
+      if (String(minutes).length === 1) {
+        minuteNode.innerHTML = `0${minutes}`;
+      } else {
+        minuteNode.innerHTML = minutes;
+      }
+
+      secondNode.innerHTML = seconds;
+    }
   }, 1000);
 
-  stopGameBtn.addEventListener('click', () => {
-    clearTimeout(timerId);
-
-    if (stopGameBtn.innerHTML === 'continue') {
-      console.log('yes');
-      timer(min.innerHTML, sec.innerHTML);
-      stopGameBtn.textContent = 'Stop';
-    }
-
-    stopGameBtn.innerHTML = 'continue';
-    stopGameBtn.classList.toggle('puzzle__btn-gray');
-  });
-
-  return timerId;
+  // stopGameBtn.addEventListener('click', () => {
+  //   clearTimeout(timerId);
+  //
+  //   if (stopGameBtn.innerHTML === 'continue') {
+  //     timer(min.innerHTML, sec.innerHTML);
+  //     stopGameBtn.textContent = 'Stop';
+  //   }
+  //
+  //   stopGameBtn.innerHTML = 'continue';
+  //   stopGameBtn.classList.toggle('puzzle__btn-gray');
+  // });
 }

@@ -45,3 +45,60 @@ ul {
 	align-items: center;
 	justify-content: center;
 }
+
+.overlay {
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.57);
+	display: none;
+}
+
+.popup {
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 20px;
+	padding: 15px 30px;
+	display: none;
+
+	&__close {
+		text-align: right;
+		font-size: 30px;
+		cursor: pointer;
+		transition: 200ms ease-in-out;
+
+		&:hover {
+			color: rgb(63, 176, 184);
+		}
+	}
+
+	&__title {
+		margin-bottom: 15px;
+		margin-top: 20px;
+	}
+
+	&__text {
+		font-size: 21px;
+		margin-bottom: 30px;
+	}
+
+	&__btn {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	&__item {
+		display: flex;
+		margin-bottom: 20px;
+		justify-content: space-between;
+	}
+}
+
+.popup-active .overlay, .popup-active .popup {
+	display: block;
+}

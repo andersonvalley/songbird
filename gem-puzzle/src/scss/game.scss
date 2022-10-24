@@ -230,9 +230,25 @@
 		border-radius: 5px;
 		background-color: #fff;
 		transition: 200ms ease-in-out;
+		cursor: pointer;
+		transform: scale(0.98);
+
+		&:hover {
+			border-radius: 10px;
+			transform: scale(1.01);
+		}
 
 		&-empty {
 			background-color: #e5e5e5;
+			transition: 200ms ease-in-out;
+			border-bottom: none;
+			border-right: none;
+
+			&:hover {
+				background-color: #e5e5e5;
+				transform: scale(0.99);
+				cursor: default;
+			}
 		}
 	}
 
