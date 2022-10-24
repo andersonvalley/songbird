@@ -65,6 +65,7 @@ ul {
 	border-radius: 20px;
 	padding: 15px 30px;
 	display: none;
+	width: 550px;
 
 	&__close {
 		text-align: right;
@@ -101,4 +102,50 @@ ul {
 
 .popup-active .overlay, .popup-active .popup {
 	display: block;
+}
+
+@media (max-height: 600px) {
+	.popup__list {
+		height: 300px;
+		overflow: scroll;
+	}
+}
+
+@media (max-height: 520px) {
+	.popup__list {
+		height: 200px;
+		overflow: scroll;
+	}
+}
+
+@media (max-height: 425px) {
+	.popup__list {
+		height: 100px;
+		overflow: scroll;
+	}
+}
+
+
+@media (max-width: 580px) {
+	.popup {
+		width: 95%;
+		padding: 15px 20px;
+	}
+
+	.popup__list {
+		height: 300px;
+		overflow: scroll;
+	}
+}
+
+@media (max-width: 443px) {
+	.popup {
+		padding: 15px 10px;
+	}
+}
+
+@media (max-width: 380px) {
+	.popup__item {
+		font-size: 14px;
+	}
 }
