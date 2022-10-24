@@ -47,6 +47,28 @@ function render(mixedElements, item, i, nextOrPrev, rows) {
   }
 }
 
+function dragOver(zero) {
+  zero.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    // eslint-disable-next-line no-param-reassign
+    zero.style.backgroundColor = '#c4c4c4';
+  });
+}
+
+function findZeroElement(item) {
+  const gameList = document.querySelector('.game__list');
+
+  item.setAttribute('draggable', 'true');
+  return Array.from(gameList.children).filter((el) => el.dataset.number === '0')[0];
+}
+
+function drop(zero, mixedElements, item, i, nextOrPrev, rows) {
+  zero.addEventListener('drop', (e) => {
+    e.preventDefault();
+    render(mixedElements, item, i, nextOrPrev, rows);
+  });
+}
+
 export default function gameLogic(mixedElements, rows) {
   const gameItems = document.querySelectorAll('.game__item');
   const empty = '0';
@@ -62,6 +84,31 @@ export default function gameLogic(mixedElements, rows) {
         render(mixedElements, item, i, i + +rows, rows);
       } else if (item.dataset.prev === empty) {
         render(mixedElements, item, i, i - +rows, rows);
+      }
+    });
+
+    item.addEventListener('mousedown', () => {
+      if (item.dataset.next === empty) {
+        const zero = findZeroElement(item);
+        dragOver(zero);
+
+        drop(zero, mixedElements, item, i, i + +rows, rows);
+      } else if (item.dataset.prev === empty) {
+        const zero = findZeroElement(item);
+        dragOver(zero);
+
+        drop(zero, mixedElements, item, i, i - +rows, rows);
+      } else if (item.nextElementSibling && item.nextElementSibling.dataset.number === empty) {
+        const zero = findZeroElement(item);
+        dragOver(zero);
+
+        drop(zero, mixedElements, item, i, i + 1, rows);
+      } else if (item.previousElementSibling
+        && item.previousElementSibling.dataset.number === empty) {
+        const zero = findZeroElement(item);
+        dragOver(zero);
+
+        drop(zero, mixedElements, item, i, i - 1, rows);
       }
     });
   });

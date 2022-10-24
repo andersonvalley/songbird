@@ -56,7 +56,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
     timerId = timer(0, 0);
   });
 
-  gameField.onclick = () => {
+  gameField.onmousedown = () => {
     if (!timerId) {
       timerId = timer(minutes, seconds);
     }
