@@ -10,7 +10,6 @@ export function clearTimeNode() {
 }
 
 export default function timer(min = 0, sec = 0) {
-  // const startGameBtn = document.querySelector('#start');
   const secondNode = document.querySelector('.puzzle__sec');
   const minuteNode = document.querySelector('.puzzle__min');
 
@@ -18,8 +17,6 @@ export default function timer(min = 0, sec = 0) {
   let minutes = +min;
 
   return setInterval(() => {
-    // timerId = setTimeout(tick, 1000);
-
     seconds += 1;
 
     if (String(seconds).length === 1) {
@@ -41,16 +38,4 @@ export default function timer(min = 0, sec = 0) {
       secondNode.innerHTML = seconds;
     }
   }, 1000);
-
-  // stopGameBtn.addEventListener('click', () => {
-  //   clearTimeout(timerId);
-  //
-  //   if (stopGameBtn.innerHTML === 'continue') {
-  //     timer(min.innerHTML, sec.innerHTML);
-  //     stopGameBtn.textContent = 'Stop';
-  //   }
-  //
-  //   stopGameBtn.innerHTML = 'continue';
-  //   stopGameBtn.classList.toggle('puzzle__btn-gray');
-  // });
 }

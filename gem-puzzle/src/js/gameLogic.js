@@ -4,7 +4,6 @@ import { showPopup } from './mainControls/saveGame';
 
 import topResults from './helps/topResults';
 import setLocalStorage from './helps/localstorage';
-import { clearTimeNode } from './helps/timer';
 
 function render(mixedElements, item, i, nextOrPrev, rows) {
   const audio = document.querySelector('.audio');
@@ -25,6 +24,7 @@ function render(mixedElements, item, i, nextOrPrev, rows) {
   // eslint-disable-next-line no-use-before-define
   gameLogic(mixedElements, rows);
 
+  // check win or not
   if (checkResults(mixedElements)) {
     const obj = {
       move: moves.innerHTML,
@@ -39,11 +39,6 @@ function render(mixedElements, item, i, nextOrPrev, rows) {
     document.querySelector('.popup__text').innerHTML = `You solved the puzzle in ${min.innerHTML}:${sec.innerHTML} and ${obj.move} moves!!`;
     document.querySelector('.popup__list').innerHTML = '';
     document.querySelector('.popup__title').innerHTML = 'Hooray!';
-
-    setTimeout(() => {
-      moves.innerHTML = '0';
-      clearTimeNode();
-    }, 100);
   }
 }
 
@@ -73,6 +68,7 @@ export default function gameLogic(mixedElements, rows) {
   const gameItems = document.querySelectorAll('.game__item');
   const empty = '0';
 
+  // move elements
   gameItems.forEach((item, i) => {
     item.addEventListener('click', () => {
       if (item.nextElementSibling && item.nextElementSibling.dataset.number === empty) {
@@ -87,6 +83,7 @@ export default function gameLogic(mixedElements, rows) {
       }
     });
 
+    // drag and drop
     item.addEventListener('mousedown', () => {
       if (item.dataset.next === empty) {
         const zero = findZeroElement(item);
