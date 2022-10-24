@@ -3,6 +3,8 @@ import { checkResults } from './mainControls/resultsOfGame';
 import { showPopup } from './mainControls/saveGame';
 
 import topResults from './helps/topResults';
+import setLocalStorage from './helps/localstorage';
+import { clearTimeNode } from './helps/timer';
 
 function render(mixedElements, item, i, nextOrPrev, rows) {
   const audio = document.querySelector('.audio');
@@ -14,9 +16,11 @@ function render(mixedElements, item, i, nextOrPrev, rows) {
   const clickElement = item.dataset.number;
 
   audio.play();
+  setLocalStorage(mixedElements);
 
   mixedElements.splice(i, 1, 0);
   mixedElements.splice(nextOrPrev, 1, +clickElement);
+
   renderItemsGameFiled(mixedElements, rows);
   // eslint-disable-next-line no-use-before-define
   gameLogic(mixedElements, rows);
@@ -38,8 +42,7 @@ function render(mixedElements, item, i, nextOrPrev, rows) {
 
     setTimeout(() => {
       moves.innerHTML = '0';
-      sec.innerHTML = '0';
-      min.innerHTML = '0';
+      clearTimeNode();
     }, 100);
   }
 }

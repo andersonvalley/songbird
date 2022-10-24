@@ -1,9 +1,12 @@
 export function stopTimer(timerId) {
   if (timerId !== undefined) {
     clearInterval(timerId);
-    // document.querySelector('.puzzle__sec').innerHTML = '0';
-    // document.querySelector('.puzzle__min').innerHTML = '0';
   }
+}
+
+export function clearTimeNode() {
+  document.querySelector('.puzzle__min').innerHTML = '0';
+  document.querySelector('.puzzle__sec').innerHTML = '0';
 }
 
 export default function timer(min = 0, sec = 0) {

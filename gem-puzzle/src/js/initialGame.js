@@ -9,9 +9,13 @@ const html = `
   <div class="puzzle">
     <div class="puzzle__controls">
       <button class="puzzle__btn" id="start">Shuffle and start</button>
-      <button class="puzzle__btn" id="stop">Stop</button>
+      <button class="puzzle__btn" id="stop" disabled>Stop</button>
       <button class="puzzle__btn" id="save">Save</button>
       <button class="puzzle__btn" id="results">Results</button>
+      <button class="puzzle__btn puzzle__btn-off" id="audio">
+       <img class="on" src="../assets/muteoff.svg" alt="">
+       <img class="off" src="../assets/mute.svg" alt="">
+      </button>
     </div>
 
     <div class="puzzle__info">

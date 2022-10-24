@@ -8,6 +8,7 @@ export default function startGame(initial, mixedElements, rows) {
   gameLogic(mixedElements, rows);
 
   if (initial) {
+    stopGameBtn.removeAttribute('disabled');
     stopGameBtn.classList.add('puzzle__btn-gray');
     stopGameBtn.innerHTML = 'Stop';
   }

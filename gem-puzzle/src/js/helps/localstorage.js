@@ -14,15 +14,33 @@ export function getLocalStorageElements() {
 }
 
 export function getLocalStorageMoves() {
-  return +JSON.parse(window.localStorage.getItem('moves'));
+  let moves = window.localStorage.getItem('moves');
+
+  if (moves) {
+    moves = JSON.parse(moves);
+  }
+
+  return moves;
 }
 
 export function getLocalStorageSeconds() {
-  return JSON.parse(window.localStorage.getItem('seconds'));
+  let sec = window.localStorage.getItem('seconds');
+
+  if (sec) {
+    sec = JSON.parse(sec);
+  }
+
+  return +sec;
 }
 
 export function getLocalStorageMinutes() {
-  return JSON.parse(window.localStorage.getItem('minutes'));
+  let min = window.localStorage.getItem('minutes');
+
+  if (min) {
+    min = JSON.parse(min);
+  }
+
+  return +min;
 }
 
 export function getLocalStorageTop() {
