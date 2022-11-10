@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a9e35f3-50ff-41b5-8147-0fd670c37d7d" name="Changes" comment="" />
+    <list default="true" id="7a9e35f3-50ff-41b5-8147-0fd670c37d7d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SongBird/src/img/chick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/img/lang.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/img/play.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/img/stop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/img/volume.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/answers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/audio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/description.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/scss/settings/vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/scss/settings/vars.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -14,19 +32,32 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HHPj04FSGlUHMth4ufgPtcJJVJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.webOptions&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SongBird/src/img" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,7 +66,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667939167734</updated>
-      <workItem from="1667939169468" duration="302000" />
+      <workItem from="1667939169468" duration="8039000" />
+      <workItem from="1668023534989" duration="11020000" />
     </task>
     <servers />
   </component>

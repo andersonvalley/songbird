@@ -1,0 +1,119 @@
+.header {
+	padding: 30px;
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+
+	&__ui {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+
+	&__lang {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #e8e8e8 !important;
+		border-radius: 15px;
+		width: 50px;
+		height: 50px;
+		font-weight: 700;
+		margin-right: 15px;
+		transition: all 200ms ease-in-out;
+
+		img {
+			width: 25px;
+		}
+
+		&:hover {
+			background-color: #d7d7d7 !important;
+		}
+	}
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+
+	&__img {
+		margin-right: 15px;
+	}
+
+	&__title {
+		color: #181818;
+		font-size: 2.4rem;
+		font-weight: 800;
+		letter-spacing: 1%;
+		text-transform: uppercase;
+		font-family: -apple-system, sans-serif;
+	}
+
+	&__subtitle {
+		color: #646464;
+		display: block;
+	}
+}
+
+.score {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $main-accent;
+	border-radius: 15px;
+	padding: 15px 30px;
+	font-weight: 700;
+	color: #fff;
+
+	&__number {
+		margin-left: 10px;
+	}
+}
+
+.nav {
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+
+	&__item {
+		background-color: #f3f3f3;
+		color: #000;
+		border-radius: 30px;
+		cursor: pointer;
+		padding: 13px 30px;
+		transition: all 200ms ease-in-out;
+
+		button {
+			font-weight: 500;
+			font-size: 1.6rem;
+			white-space: nowrap;
+			color: #1a1a1a;
+		}
+
+		&:hover {
+			background-color: darken(#f3f3f3, 3);
+		}
+
+		&_active {
+			background-color: $main-accent;
+			cursor: default;
+
+			button {
+				color: #fff;
+				cursor: default;
+			}
+
+			&:hover {
+				background-color: $main-accent;
+			}
+		}
+	}
+
+	&__item:not(:last-child) {
+		margin-right: 20px;
+	}
+}
