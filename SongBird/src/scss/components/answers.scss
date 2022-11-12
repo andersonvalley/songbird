@@ -12,10 +12,12 @@
 		border-radius: 10px;
 		border: 4px solid $main-accent;
 		margin-right: 15px;
+		pointer-events: none;
 	}
 
 	&__text {
 		font-size: 1.7rem;
+		pointer-events: none;
 	}
 
 	&__item {

@@ -81,18 +81,14 @@
 
 	&__item {
 		background-color: #f3f3f3;
-		color: #000;
 		border-radius: 30px;
 		cursor: pointer;
 		padding: 13px 30px;
 		transition: all 200ms ease-in-out;
-
-		button {
-			font-weight: 500;
-			font-size: 1.6rem;
-			white-space: nowrap;
-			color: #1a1a1a;
-		}
+		font-weight: 500;
+		font-size: 1.6rem;
+		white-space: nowrap;
+		color: #1a1a1a;
 
 		&:hover {
 			background-color: darken(#f3f3f3, 3);
@@ -101,12 +97,9 @@
 		&_active {
 			background-color: $main-accent;
 			cursor: default;
-
-			button {
-				color: #fff;
-				cursor: default;
-			}
-
+			color: #fff;
+			pointer-events: none;
+			
 			&:hover {
 				background-color: $main-accent;
 			}

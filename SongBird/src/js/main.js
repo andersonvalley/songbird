@@ -1,17 +1,12 @@
 import '../index.html';
 import '../scss/main.scss';
 
-function rangeInput(input, shadow) {
-  const inputRange = window.document.querySelector(input);
-  const inputShadow = window.document.querySelector(shadow);
+import renderQuiz from './components/renderQuiz';
+import clickOnAnswer from './components/clickOnAnswer';
+import { currentCategory, returnRandomQuestion } from './helpers/returnQuestionOrCategory';
 
-  inputRange.addEventListener('input', (e) => {
-    if (e.target.value < 30 && e.target.value >= 1) {
-      inputShadow.style.width = `${+e.target.value + 1}%`;
-    } else {
-      inputShadow.style.width = `${e.target.value}%`;
-    }
-  });
-}
+window.addEventListener('DOMContentLoaded', () => {
+  renderQuiz(currentCategory(), returnRandomQuestion());
+});
 
-rangeInput('.track__line', '.track__line_back');
+clickOnAnswer();

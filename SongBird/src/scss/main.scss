@@ -105,4 +105,20 @@ ul {
 .flex {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.next-question {
+	width: 100%;
+	background-color: $main-accent;
+	border-radius: 10px;
+	padding: 20px 30px;
+	color: #fff;
+	font-size: 1.7rem;
+	font-weight: 500;
+}
+
+.next-question[disabled] {
+	background-color: #646464;
+	cursor: default;
 }

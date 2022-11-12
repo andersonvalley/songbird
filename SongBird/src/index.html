@@ -33,24 +33,12 @@
     <div class="header__bottom">
       <nav class="header__nav nav">
         <ul class="nav__list">
-          <li class="nav__item nav__item_active">
-            <button class="btn btn-reset">Разминка</button>
-          </li>
-          <li class="nav__item">
-            <button class="btn btn-reset">Воробьиные</button>
-          </li>
-          <li class="nav__item">
-            <button class="btn btn-reset">Лесные птицы</button>
-          </li>
-          <li class="nav__item">
-            <button class="btn btn-reset">Певчие птицы</button>
-          </li>
-          <li class="nav__item">
-            <button class="btn btn-reset">Хищные птицы</button>
-          </li>
-          <li class="nav__item">
-            <button class="btn btn-reset">Морские птицы</button>
-          </li>
+          <li class="nav__item nav__item_active" data-index="0">Разминка</li>
+          <li class="nav__item" data-index="1">Воробьиные</li>
+          <li class="nav__item" data-index="2">Лесные птицы</li>
+          <li class="nav__item" data-index="3">Певчие птицы</li>
+          <li class="nav__item" data-index="4">Хищные птицы</li>
+          <li class="nav__item" data-index="5">Морские птицы</li>
         </ul>
       </nav>
     </div>
@@ -59,31 +47,28 @@
     <section class="audio">
 
       <div class="audio__cover">
-        <img class="audio__cover_img" width="300"
-             src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
-             alt="bird">
+        <img src="img/bird.jpg" class="audio__cover_img" id="question-cover" width="300" alt="bird">
       </div>
 
       <div class="audio__track track">
         <h1 class="audio__title">Попробуйте угадать птицу по голосу</h1>
 
-        <p class="track__title">#####</p>
+        <p id="question__title" class="track__title">#####</p>
 
         <div class="track__controls">
-          <audio id="track"
-                 src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"></audio>
+          <audio id="question-track"></audio>
 
           <div class="track__inner">
-            <button class="btn-reset track__play">
-              <img src="img/play.svg" alt="play or stop button">
+            <button id="question-play" class="btn-reset track__play" data-play="false">
+              <img src="img/stop.svg" srcset="img/play.svg" alt="play or stop button">
             </button>
 
-            <div class="track__duration">
+            <div id="question-track-duration" class="track__duration">
               <input class="track__line" value="0" min="0" max="100" step="1" type="range">
               <div class="track__line_back" style="width: 0"></div>
               <div class="track__time">
                 <span class="track__time-current">00:00</span>
-                <span class="track__time-max">01:00</span>
+                <span class="track__time-max">00:00</span>
               </div>
             </div>
 
@@ -98,86 +83,20 @@
     <div class="flex">
       <section class="answers">
         <h3 class="answers__title">Выберите вариант ответа</h3>
-
-        <ul class="answers__list">
-          <li class="answers__item answers__item_correct">
-            <div class="answers__round"></div>
-            <span class="answers__text">Ворон</span>
-          </li>
-          <li class="answers__item answers__item_wrong">
-            <div class="answers__round"></div>
-            <span class="answers__text">Журавль</span>
-          </li>
-          <li class="answers__item">
-            <div class="answers__round"></div>
-            <span class="answers__text">Ласточка</span>
-          </li>
-          <li class="answers__item">
-            <div class="answers__round"></div>
-            <span class="answers__text">Козодой</span>
-          </li>
-          <li class="answers__item">
-            <div class="answers__round"></div>
-            <span class="answers__text">Кукушка</span>
-          </li>
-          <li class="answers__item">
-            <div class="answers__round"></div>
-            <span class="answers__text">Синица</span>
-          </li>
-        </ul>
+        <ul class="answers__list"></ul>
       </section>
 
       <section class="description">
         <h3 class="description__title">Описание птицы</h3>
 
         <div class="description__track">
-          <div class="description__inner">
-            <div class="audio__cover">
-              <img class="audio__cover_img" width="300"
-                   src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
-                   alt="bird">
-            </div>
-
-            <div class="audio__track track">
-
-              <p class="track__title">Журавль</p>
-              <p class="track__title_latin">Grus grus</p>
-
-              <div class="track__controls">
-                <audio id="track__description"
-                       src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"></audio>
-
-                <div class="track__inner">
-                  <button class="btn-reset track__play">
-                    <img src="img/play.svg" alt="play or stop button">
-                  </button>
-
-                  <div class="track__duration">
-                    <input class="track__line" value="0" min="0" max="100" step="1" type="range">
-                    <div class="track__line_back" style="width: 0"></div>
-                    <div class="track__time">
-                      <span class="track__time-current">00:00</span>
-                      <span class="track__time-max">01:00</span>
-                    </div>
-                  </div>
-
-                  <button class="track__volume btn-reset">
-                    <img src="img/volume.svg" alt="volume">
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p class="description__text">
-            Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица
-            начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук
-            «кур».
-          </p>
+          <h3>Послушайте плеер</h3>
+          <p>Выберите птицу из списка</p>
         </div>
-
       </section>
     </div>
+
+    <button class="btn-reset next-question" disabled>Следующий уровень</button>
 
   </main>
 </div>
