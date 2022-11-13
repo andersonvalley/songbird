@@ -1,11 +1,11 @@
 .header {
-	padding: 30px;
+	padding: 20px 30px 0 30px;
 
 	&__top {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 40px;
+		margin-bottom: 25px;
 	}
 
 	&__ui {
@@ -82,13 +82,13 @@
 	&__item {
 		background-color: #f3f3f3;
 		border-radius: 30px;
-		cursor: pointer;
-		padding: 13px 30px;
+		padding: 10px 30px;
 		transition: all 200ms ease-in-out;
 		font-weight: 500;
 		font-size: 1.6rem;
 		white-space: nowrap;
 		color: #1a1a1a;
+		margin-bottom: 5px;
 
 		&:hover {
 			background-color: darken(#f3f3f3, 3);
@@ -99,7 +99,7 @@
 			cursor: default;
 			color: #fff;
 			pointer-events: none;
-			
+
 			&:hover {
 				background-color: $main-accent;
 			}
@@ -107,6 +107,6 @@
 	}
 
 	&__item:not(:last-child) {
-		margin-right: 20px;
+		margin-right: 15px;
 	}
 }

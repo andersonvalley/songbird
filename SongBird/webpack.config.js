@@ -11,7 +11,7 @@ const fileName = (ext) => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  devtool: isDev && 'source-map',
+  devtool: isDev && 'inline-source-map',
   mode: 'development',
   entry: './js/main.js',
   output: {
@@ -77,7 +77,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|mp3|gif)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'img/[name][ext]',

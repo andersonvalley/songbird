@@ -34,7 +34,6 @@ function setDuration(audioEl, durationEl) {
     timeCurrent.innerHTML = makeReadableDuration(audioEl.currentTime);
     const percent = String(Math.floor((audioEl.currentTime / audioEl.duration) * 100));
 
-    // console.log(percent);
     trackLine.setAttribute('value', percent);
     if (+percent < 30 && +percent >= 1) {
       trackLineShadow.style.width = `${+percent + 1}%`;

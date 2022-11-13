@@ -49,6 +49,10 @@
 		}
 	}
 
+	&__item[disabled] {
+		pointer-events: none;
+	}
+
 	&__item:not(:last-child) {
 		margin-bottom: 5px;
 	}

@@ -4,6 +4,8 @@
 @import "components/audio";
 @import "components/answers";
 @import "components/description";
+@import "components/footer";
+@import "components/result";
 
 
 html {
@@ -55,7 +57,7 @@ ul {
 
 .container {
 	max-width: 1400px;
-	margin: 50px auto;
+	margin: 20px auto 0 auto;
 	background-color: #fff;
 	border-radius: 20px;
 	width: calc(100vw - 100px);
@@ -63,10 +65,10 @@ ul {
 
 .app {
 	background-color: #ececec;
-	padding: 30px;
+	padding: 15px 30px;
 	border-top-right-radius: 30px;
 	border-top-left-radius: 30px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .btn-reset {
@@ -108,6 +110,11 @@ ul {
 	margin-bottom: 20px;
 }
 
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
 .next-question {
 	width: 100%;
 	background-color: $main-accent;
@@ -116,9 +123,241 @@ ul {
 	color: #fff;
 	font-size: 1.7rem;
 	font-weight: 500;
+	transition: all 200ms ease-in-out;
+
+	&:hover {
+		background-color: lighten($main-accent, 5);
+	}
 }
 
 .next-question[disabled] {
 	background-color: #646464;
 	cursor: default;
+}
+
+@media (max-width: 1220px) {
+	.track__duration {
+		width: 400px;
+	}
+
+	.nav__list {
+		flex-wrap: wrap;
+	}
+
+	.audio__cover {
+		margin-right: 20px;
+	}
+
+	.description {
+		width: 58%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.track__duration {
+		width: 250px;
+	}
+
+	.audio__title {
+		margin-bottom: 30px;
+	}
+
+	.description {
+		.track__play {
+			margin-right: 10px;
+		}
+
+		.track__volume {
+			margin-left: 10px;
+		}
+
+		.audio__cover {
+			width: 170px;
+		}
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.description {
+		.track__inner {
+			justify-content: flex-start;
+		}
+	}
+
+	.description__inner {
+		margin-bottom: 0;
+	}
+
+	.container {
+		width: 100%;
+	}
+	.logo__img {
+		width: 40px;
+	}
+
+	.logo__title {
+		font-size: 2rem;
+	}
+
+	.score {
+		padding: 10px 20px;
+	}
+
+	.flex {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.answers {
+		margin-bottom: 20px;
+	}
+
+	.answers, .description {
+		width: 100%;
+	}
+
+	.audio {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.audio__cover {
+		margin-bottom: 10px;
+	}
+
+	.audio__title {
+		margin-bottom: 20px;
+	}
+
+	.track__title {
+		margin-bottom: 15px;
+	}
+
+	.track__inner {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 660px) {
+	.score {
+		font-size: 1.4rem;
+		padding: 8px 13px;
+		height: 40px;
+	}
+
+	.header__lang {
+		width: 42px;
+		height: 42px;
+	}
+
+	.logo__title {
+		font-size: 1.4rem;
+	}
+
+	.logo__subtitle {
+		font-size: 1.2rem;
+	}
+
+	.logo__img {
+		width: 30px;
+		margin-right: 10px;
+	}
+
+	.nav__item {
+		font-size: 1.4rem;
+		padding: 8px 21px;
+	}
+
+	.nav__item:not(:last-child) {
+		margin-right: 8px;
+	}
+
+	.audio__cover img {
+		height: 150px;
+	}
+
+	.audio__cover {
+		width: 250px;
+	}
+
+	.audio__title {
+		font-size: 2rem;
+	}
+
+	.track__title {
+		font-size: 1.6rem;
+	}
+
+	.answers__title {
+		font-size: 1.7rem;
+	}
+
+	.answers__item span {
+		font-size: 1.6rem;
+	}
+
+	.description .audio__cover img {
+		height: 110px;
+	}
+}
+
+@media (max-width: 550px) {
+	
+	.result-btn {
+		width: 100%;
+	}
+
+	.header__top {
+		flex-direction: column;
+		margin-bottom: 10px;
+	}
+
+	.header__logo {
+		align-self: flex-start;
+		margin-bottom: 20px;
+	}
+
+	.description .description__inner {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.description .audio__track {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	.nav__list {
+		justify-content: center;
+	}
+
+	.header {
+		padding: 10px;
+	}
+
+	.app {
+		padding: 15px 10px;
+	}
+}
+
+@media (max-width: 430px) {
+	.track__duration {
+		width: 200px;
+	}
+}
+
+@media (max-width: 360px) {
+	.track__duration {
+		width: 160px;
+	}
+
+	.nav__item {
+		width: 100%;
+		text-align: center;
+	}
 }

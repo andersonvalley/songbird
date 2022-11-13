@@ -53,9 +53,9 @@
       <div class="audio__track track">
         <h1 class="audio__title">Попробуйте угадать птицу по голосу</h1>
 
-        <p id="question__title" class="track__title">#####</p>
-
         <div class="track__controls">
+          <p id="question__title" class="track__title">#####</p>
+
           <audio id="question-track"></audio>
 
           <div class="track__inner">
@@ -64,7 +64,7 @@
             </button>
 
             <div id="question-track-duration" class="track__duration">
-              <input class="track__line" value="0" min="0" max="100" step="1" type="range">
+              <input class="track__line" value="10" min="0" max="100" step="1" type="range">
               <div class="track__line_back" style="width: 0"></div>
               <div class="track__time">
                 <span class="track__time-current">00:00</span>
@@ -84,6 +84,8 @@
       <section class="answers">
         <h3 class="answers__title">Выберите вариант ответа</h3>
         <ul class="answers__list"></ul>
+        <audio id="win" src="img/win.mp3"></audio>
+        <audio id="error" src="img/error.mp3"></audio>
       </section>
 
       <section class="description">
@@ -96,9 +98,19 @@
       </section>
     </div>
 
-    <button class="btn-reset next-question" disabled>Следующий уровень</button>
+    <div class="flex-center">
+      <button class="btn-reset next-question" disabled>Следующий уровень</button>
+    </div>
 
   </main>
+
+  <footer class="footer">
+    <a class="footer__course" href="https://rs.school/js/"><img width="80" src="img/logo.svg" alt="logo"></a>
+    <div>
+      <span>2022</span>
+      <a class="footer__github" href="https://github.com/andersonvalley">GitHub</a>
+    </div>
+  </footer>
 </div>
 </body>
 </html>

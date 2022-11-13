@@ -7,6 +7,5 @@ import { currentCategory, returnRandomQuestion } from './helpers/returnQuestionO
 
 window.addEventListener('DOMContentLoaded', () => {
   renderQuiz(currentCategory(), returnRandomQuestion());
+  clickOnAnswer();
 });
-
-clickOnAnswer();
