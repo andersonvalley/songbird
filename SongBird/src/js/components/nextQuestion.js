@@ -6,10 +6,11 @@ import {
   returnRandomQuestion,
 } from '../helpers/returnQuestionOrCategory';
 import data from '../../assets/data';
+// eslint-disable-next-line import/no-cycle
 import showResult from './showResult';
 import playOrStop from './audio';
 
-function changeCategory() {
+export function changeCategory() {
   const categoryList = document.querySelector('.nav__list');
   const categories = Array.from(categoryList.children);
 

@@ -28,8 +28,8 @@ export function renderAnswers(answers) {
 
 function cleanDOM() {
   const html = `
-     <h3 class="track__title">Послушайте плеер</h3>
-     <p>Выберите птицу из списка</p>
+     <h3 class="description__text"></h3>
+     <p class="description__choose"></p>
   `;
 
   document.querySelector('#question-cover').setAttribute('src', 'img/bird.jpg');

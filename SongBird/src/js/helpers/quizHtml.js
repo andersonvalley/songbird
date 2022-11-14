@@ -14,7 +14,7 @@ export default function quizHtml() {
       </div>
 
       <div class="audio__track track">
-        <h1 class="audio__title">Попробуйте угадать птицу по голосу</h1>
+        <h1 class="audio__title"></h1>
 
         <div class="track__controls">
           <p id="question__title" class="track__title">******</p>
@@ -45,24 +45,24 @@ export default function quizHtml() {
 
     <div class="flex">
       <section class="answers">
-        <h3 class="answers__title">Выберите вариант ответа</h3>
+        <h3 class="answers__title"></h3>
         <ul class="answers__list"></ul>
         <audio id="win" src="${winAudio}"></audio>
         <audio id="error" src="${errorAudio}"></audio>
       </section>
 
       <section class="description">
-        <h3 class="description__title">Описание птицы</h3>
+        <h3 class="description__title"></h3>
 
         <div class="description__track">
-          <h3>Послушайте плеер</h3>
-          <p>Выберите птицу из списка</p>
+          <h3 class="description__text"></h3>
+          <p class="description__choose"></p>
         </div>
       </section>
     </div>
 
     <div class="flex-center">
-      <button class="btn-reset next-question" disabled>Следующий уровень</button>
+      <button class="btn-reset next-question" disabled></button>
     </div>
 `;
 }

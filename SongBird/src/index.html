@@ -16,18 +16,22 @@
         <img class="logo__img" src="img/chick.png" width="60" alt="song bird logo">
         <div>
           <span class="logo__title">SongBird</span>
-          <span class="logo__subtitle">Попробуйте угадать птицу по голосу</span>
+          <span class="logo__subtitle"></span>
         </div>
       </div>
 
       <div class="header__ui">
         <span class="header__score score">
-        Набрано очков: <span class="score__number">0</span>
+        <span class="score__text"></span> <span class="score__number">0</span>
         </span>
 
-        <button class="btn-reset header__lang">
+        <div class="btn-reset header__lang">
           <img src="img/lang.svg" alt="change lang">
-        </button>
+          <div class="modal">
+            <div class="modal__item">ru</div>
+            <div class="modal__item">en</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="header__bottom">
@@ -46,7 +50,7 @@
 
   <main class="app container first-page">
     <video src="img/video.mp4" autoplay muted loop playsinline></video>
-    <button class="btn-reset first-page__btn">Начать викторину</button>
+    <button class="btn-reset first-page__btn"></button>
   </main>
 
   <footer class="footer">

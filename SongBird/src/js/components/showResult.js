@@ -4,6 +4,9 @@ import renderQuiz from './renderQuiz';
 import { currentCategory, resetCategory, returnRandomQuestion } from '../helpers/returnQuestionOrCategory';
 // eslint-disable-next-line import/no-cycle
 import clickOnAnswer from './clickOnAnswer';
+// eslint-disable-next-line import/no-cycle
+import { changeCategory } from './nextQuestion';
+import renderL from '../helpers/renderL';
 
 export default function showResult() {
   const app = document.querySelector('.app');
@@ -11,24 +14,25 @@ export default function showResult() {
 
   let html = () => `
    <div class="result">
-     <h4 class="result__title">Поздравляем!</h4>
-     <p class="result__text">Вы прошли викторину и набрали ${countTotalScore()} из 30 возможных баллов</p>
-     <button class="btn-reset next-question result-btn">Попробовать еще раз</button>
+     <h4 class="result__title"></h4>
+     <p class="result__text"></p>
+     <button class="btn-reset next-question result-btn"></button>
    </div>
   `;
 
-  if (countTotalScore() < 30) {
+  if (countTotalScore() === '30') {
     html = () => `
      <div class="result">
-       <h4 class="result__title">Поздравляем! Игра окончена!</h4>
-       <p class="result__text">Вы прошли викторину и набрали ${countTotalScore()} из 30 возможных баллов</p>
-       <button class="btn-reset next-question result-btn">В начало</button>
+       <h4 class="result__title result__title-fin"></h4>
+       <p class="result__text"></p>
+       <button class="btn-reset next-question result-btn-fin"></button>
      </div>
   `;
   }
 
   app.insertAdjacentHTML('beforeend', html());
 
+  renderL();
   const btnBack = document.querySelector('.result-btn');
 
   btnBack.onclick = () => {
@@ -38,7 +42,10 @@ export default function showResult() {
     app.innerHTML = '';
     app.innerHTML = quizHtml();
 
+    renderL();
+
     renderQuiz(currentCategory(), returnRandomQuestion());
     clickOnAnswer();
+    changeCategory();
   };
 }
