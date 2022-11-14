@@ -1,9 +1,6 @@
 import countTotalScore from '../helpers/countScore';
 // eslint-disable-next-line import/no-cycle
-import renderQuiz from './renderQuiz';
-import { currentCategory, returnRandomQuestion } from '../helpers/returnQuestionOrCategory';
-// eslint-disable-next-line import/no-cycle
-import clickOnAnswer from './clickOnAnswer';
+import { render } from './startQuiz';
 
 export default function clickOnButtonLang() {
   const btn = document.querySelector('.header__lang');
@@ -19,8 +16,9 @@ export default function clickOnButtonLang() {
     window.localStorage.setItem('lang', lang);
     // eslint-disable-next-line no-use-before-define
     renderLangDifference(lang);
-    renderQuiz(currentCategory(), returnRandomQuestion());
-    clickOnAnswer();
+
+    if (document.querySelector('.first-page')) return;
+    render();
   };
 }
 

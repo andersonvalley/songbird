@@ -1,4 +1,5 @@
 import playOrStop from './audio';
+// eslint-disable-next-line import/no-cycle
 import { checkLocalStorage } from './changeLang';
 
 export default function renderQuiz(currentCategory, randomQuestion) {
