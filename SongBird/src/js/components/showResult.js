@@ -1,12 +1,15 @@
 import countTotalScore, { resetScore } from '../helpers/countScore';
 import quizHtml from '../helpers/quizHtml';
+// eslint-disable-next-line import/no-cycle
 import renderQuiz from './renderQuiz';
 import { currentCategory, resetCategory, returnRandomQuestion } from '../helpers/returnQuestionOrCategory';
 // eslint-disable-next-line import/no-cycle
+import { changeCategory } from './nextQuestion';
+import { showButtonLang } from '../helpers/hideButtonLang';
+// eslint-disable-next-line import/no-cycle
 import clickOnAnswer from './clickOnAnswer';
 // eslint-disable-next-line import/no-cycle
-import { changeCategory } from './nextQuestion';
-import renderL from '../helpers/renderL';
+import { checkLocalStorage } from './changeLang';
 
 export default function showResult() {
   const app = document.querySelector('.app');
@@ -31,8 +34,7 @@ export default function showResult() {
   }
 
   app.insertAdjacentHTML('beforeend', html());
-
-  renderL();
+  checkLocalStorage();
   const btnBack = document.querySelector('.result-btn');
 
   btnBack.onclick = () => {
@@ -42,10 +44,9 @@ export default function showResult() {
     app.innerHTML = '';
     app.innerHTML = quizHtml();
 
-    renderL();
-
     renderQuiz(currentCategory(), returnRandomQuestion());
     clickOnAnswer();
     changeCategory();
+    showButtonLang();
   };
 }

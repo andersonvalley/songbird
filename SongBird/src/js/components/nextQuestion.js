@@ -1,4 +1,4 @@
-// import randomNumber from '../helpers/randomNumber';
+// eslint-disable-next-line import/no-cycle
 import renderQuiz from './renderQuiz';
 import {
   currentCategoryIndex,
@@ -33,9 +33,8 @@ export default function toNextQuestion() {
     }
 
     nextBtn.setAttribute('disabled', 'disabled');
-    const next = data[nextCategory()];
 
-    renderQuiz(next, returnRandomQuestion());
+    renderQuiz(nextCategory(), returnRandomQuestion());
     changeCategory();
 
     playOrStop(questionTrack, questionPlayStopButton, '#question-track-duration');

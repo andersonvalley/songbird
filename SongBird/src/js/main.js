@@ -1,14 +1,15 @@
 import '../index.html';
+import '../gallery.html';
 import '../scss/main.scss';
 
 import startQuiz from './components/startQuiz';
-import changeLang from './components/changeLang';
-import renderL from './helpers/renderL';
+import clickOnButtonLang, { checkLocalStorage } from './components/changeLang';
 
 window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.first-page')) {
     startQuiz();
-    renderL();
   }
-  changeLang();
+
+  checkLocalStorage();
+  clickOnButtonLang();
 });

@@ -19,7 +19,7 @@ export default function descriptionBirdHtml({
                        src="${audio}"></audio>
 
                 <div class="track__inner">
-                  <button id="description-play" class="btn-reset track__play">
+                  <button data-play="false" id="description-play" class="btn-reset track__play">
                     <img src="img/play.svg" alt="play or stop button">
                   </button>
 

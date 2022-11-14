@@ -35,6 +35,14 @@ module.exports = {
         collapseWhitespace: !isDev,
       },
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/gallery.html'),
+      filename: 'gallery.html',
+      inject: 'body',
+      minify: {
+        collapseWhitespace: !isDev,
+      },
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `./css/${fileName('css')}`,

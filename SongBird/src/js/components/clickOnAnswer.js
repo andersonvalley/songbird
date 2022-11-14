@@ -4,6 +4,7 @@ import toNextQuestion from './nextQuestion';
 import { currentCategory, returnCurrentQuestion } from '../helpers/returnQuestionOrCategory';
 import countTotalScore from '../helpers/countScore';
 import playOrStop from './audio';
+import hideButtonLang from '../helpers/hideButtonLang';
 
 export default function clickOnAnswer() {
   const answersList = document.querySelector('.answers__list');
@@ -18,10 +19,9 @@ export default function clickOnAnswer() {
           descriptionContainer.insertAdjacentHTML('beforeend', descriptionBirdHtml(item));
           // eslint-disable-next-line no-use-before-define
           checkCorrectAnswer(item, e.target, returnCurrentQuestion());
-
-          const track = document.querySelector('#track__description');
-          const playStopButton = document.querySelector('#description-play');
-          playOrStop(track, playStopButton, '#description-track-duration');
+          // eslint-disable-next-line no-use-before-define
+          play();
+          hideButtonLang();
         }
       });
     }
@@ -44,11 +44,10 @@ export function checkCorrectAnswer(itemOfQuestion, clickedElement, currentQuesti
   const headerScore = document.querySelector('.score__number');
 
   if (currentQuestion.id === itemOfQuestion.id) {
-    if (errorAudio.play()) {
-      errorAudio.pause();
-      winAudio.play();
-    }
-    winAudio.play();
+    errorAudio.pause();
+    // eslint-disable-next-line no-use-before-define
+    updateSrc('img/win.mp3', winAudio);
+
     document.querySelector('#question-track').pause();
     birdCover.setAttribute('src', currentQuestion.image);
     questionTitle.innerHTML = currentQuestion.name;
@@ -61,19 +60,31 @@ export function checkCorrectAnswer(itemOfQuestion, clickedElement, currentQuesti
 
     toNextQuestion();
   } else {
+    // eslint-disable-next-line no-use-before-define
+    updateSrc('img/error.mp3', errorAudio);
+
     if (clickedElement.getAttribute('clicked') === 'true') {
       clickedElement.classList.add('answers__item_wrong');
       return;
     }
 
-    if (errorAudio.play()) {
-      errorAudio.load();
-      errorAudio.play();
-    }
-    errorAudio.play();
     clickedElement.setAttribute('clicked', 'true');
 
     currentScore -= 1;
     clickedElement.classList.add('answers__item_wrong');
+  }
+}
+
+function updateSrc(src, audioEl) {
+  audioEl.setAttribute('src', src);
+  audioEl.play();
+}
+
+function play() {
+  const track = document.querySelector('#track__description');
+  const playStopButton = document.querySelector('#description-play');
+
+  if (track) {
+    playOrStop(track, playStopButton, '#description-track-duration');
   }
 }

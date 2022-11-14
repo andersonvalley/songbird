@@ -1,12 +1,18 @@
 import data from '../../assets/data';
+import dataEN from '../../assets/dataEN';
 import randomNumber from './randomNumber';
 
 let categoryIndex = 0;
 let currentQuestion = {};
 
+export default function rerender() {
+  const dataByLang = document.querySelector('html').getAttribute('lang') === 'ru' ? data : dataEN;
+  return dataByLang;
+}
+
 export function nextCategory() {
   categoryIndex += 1;
-  return categoryIndex;
+  return rerender()[categoryIndex];
 }
 
 export function resetCategory() {
@@ -14,7 +20,7 @@ export function resetCategory() {
 }
 
 export function currentCategory() {
-  return data[categoryIndex];
+  return rerender()[categoryIndex];
 }
 
 export function currentCategoryIndex() {

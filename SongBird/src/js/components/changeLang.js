@@ -1,6 +1,11 @@
 import countTotalScore from '../helpers/countScore';
+// eslint-disable-next-line import/no-cycle
+import renderQuiz from './renderQuiz';
+import { currentCategory, returnRandomQuestion } from '../helpers/returnQuestionOrCategory';
+// eslint-disable-next-line import/no-cycle
+import clickOnAnswer from './clickOnAnswer';
 
-export default function changeLang() {
+export default function clickOnButtonLang() {
   const btn = document.querySelector('.header__lang');
   const html = document.querySelector('html');
 
@@ -13,11 +18,13 @@ export default function changeLang() {
     html.setAttribute('lang', lang);
     window.localStorage.setItem('lang', lang);
     // eslint-disable-next-line no-use-before-define
-    renderLang(lang);
+    renderLangDifference(lang);
+    renderQuiz(currentCategory(), returnRandomQuestion());
+    clickOnAnswer();
   };
 }
 
-export function renderLang(lang = 'ru') {
+export function renderLangDifference(lang = 'ru') {
   const pageBtn = document.querySelector('.first-page__btn');
   const logoSubtitle = document.querySelector('.logo__subtitle');
   const scoreText = document.querySelector('.score__text');
@@ -31,8 +38,18 @@ export function renderLang(lang = 'ru') {
   const resultText = document.querySelector('.result__text');
   const resultTitle = document.querySelector('.result__title');
   const resultTitleFin = document.querySelector('.result__title-fin');
+  const navList = document.querySelector('.nav__list');
+
+  const category = ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'];
+  const categoryENG = ['Warm up', 'Passerines', 'Forest birds', 'Song birds', 'Predator birds', 'Sea birds'];
+
+  function categoryHtml(item, index) {
+    navList.innerHTML = '';
+    return `<li class="nav__item ${index === 0 && 'nav__item_active'}">${item}</li>`;
+  }
 
   if (lang === 'en') {
+    navList.insertAdjacentHTML('beforeend', categoryENG.map((item, index) => categoryHtml(item, index)).join(''));
     if (pageBtn) {
       pageBtn.innerHTML = 'Start quiz';
     }
@@ -75,6 +92,8 @@ export function renderLang(lang = 'ru') {
       resultTitleFin.innerHTML = 'Congratulations! The game is over!!';
     }
   } else if (lang === 'ru') {
+    navList.insertAdjacentHTML('beforeend', category.map((item, index) => categoryHtml(item, index)).join(''));
+
     if (pageBtn) {
       pageBtn.innerHTML = 'Начать викторину';
     }
@@ -117,5 +136,15 @@ export function renderLang(lang = 'ru') {
     if (resultTitleFin) {
       resultTitleFin.innerHTML = 'Поздравляем! Игра окончена!!';
     }
+  }
+}
+
+export function checkLocalStorage() {
+  const lang = window.localStorage.getItem('lang');
+  if (lang) {
+    document.querySelector('html').setAttribute('lang', lang);
+    renderLangDifference(lang);
+  } else {
+    renderLangDifference('ru');
   }
 }

@@ -1,4 +1,5 @@
 import playOrStop from './audio';
+import { checkLocalStorage } from './changeLang';
 
 export default function renderQuiz(currentCategory, randomQuestion) {
   const questionTrack = document.querySelector('#question-track');
@@ -10,6 +11,7 @@ export default function renderQuiz(currentCategory, randomQuestion) {
 
   questionTrack.setAttribute('src', randomQuestion.audio);
   playOrStop(questionTrack, questionPlayStopButton, '#question-track-duration');
+  checkLocalStorage();
 }
 
 export function renderAnswers(answers) {
@@ -36,7 +38,6 @@ function cleanDOM() {
   document.querySelector('#question-track').setAttribute('src', '');
   document.querySelector('#question__title').innerHTML = '******';
   document.querySelector('.description__track').innerHTML = html;
-
   const track = document.querySelector('#question-track-duration');
 
   const buttonPlay = document.querySelector('#question-play');

@@ -2,20 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a9e35f3-50ff-41b5-8147-0fd670c37d7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SongBird/src/img/chick.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/img/lang.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/img/play.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/img/stop.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/img/volume.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/answers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/audio.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/description.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/scss/components/header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/assets/dataEN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SongBird/src/js/helpers/hideButtonLang.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/img/error.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/img/error.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SongBird/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/changeLang.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/changeLang.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/clickOnAnswer.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/clickOnAnswer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/nextQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/nextQuestion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/renderQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/renderQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/showResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/showResult.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/startQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/startQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/helpers/descriptionBirdHtml.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/helpers/descriptionBirdHtml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/helpers/renderL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/js/helpers/returnQuestionOrCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/helpers/returnQuestionOrCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SongBird/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/scss/settings/vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/scss/settings/vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/src/scss/components/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/scss/components/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SongBird/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,6 +60,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SongBird/src/js/components" />
       <recent name="$PROJECT_DIR$/SongBird/src/img" />
     </key>
   </component>
@@ -68,6 +74,13 @@
       <updated>1667939167734</updated>
       <workItem from="1667939169468" duration="8039000" />
       <workItem from="1668023534989" duration="11020000" />
+      <workItem from="1668405510237" duration="4164000" />
+      <workItem from="1668409985063" duration="934000" />
+      <workItem from="1668412105581" duration="2146000" />
+      <workItem from="1668424500580" duration="2455000" />
+      <workItem from="1668434723487" duration="729000" />
+      <workItem from="1668435900841" duration="554000" />
+      <workItem from="1668441546388" duration="4219000" />
     </task>
     <servers />
   </component>
