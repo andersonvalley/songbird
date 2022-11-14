@@ -7,7 +7,7 @@ import {
 } from '../helpers/returnQuestionOrCategory';
 import data from '../../assets/data';
 import showResult from './showResult';
-import { playOrStop } from './audio';
+import playOrStop from './audio';
 
 function changeCategory() {
   const categoryList = document.querySelector('.nav__list');
@@ -37,6 +37,6 @@ export default function toNextQuestion() {
     renderQuiz(next, returnRandomQuestion());
     changeCategory();
 
-    playOrStop(questionTrack, questionPlayStopButton);
+    playOrStop(questionTrack, questionPlayStopButton, '#question-track-duration');
   }, { once: true });
 }

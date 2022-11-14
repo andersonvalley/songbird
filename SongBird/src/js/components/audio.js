@@ -1,8 +1,8 @@
-export default function audio() {
+import rangeInput from '../helpers/rangeInputUi';
 
-}
+export default function playOrStop(audioElement, buttonPlay, duration) {
+  rangeInput('#question-track-line', '#question-track-line-back', '#question-track');
 
-export function playOrStop(audioElement, buttonPlay) {
   buttonPlay.addEventListener('click', () => {
     if (buttonPlay.dataset.play === 'false') {
       buttonPlay.children[0].setAttribute('srcset', 'img/stop.svg');
@@ -10,7 +10,7 @@ export function playOrStop(audioElement, buttonPlay) {
       buttonPlay.setAttribute('data-play', 'true');
 
       // eslint-disable-next-line no-use-before-define
-      setDuration(audioElement, '#question-track-duration');
+      setDuration(audioElement, duration);
     } else {
       buttonPlay.children[0].setAttribute('srcset', 'img/play.svg');
       audioElement.pause();

@@ -6,3 +6,7 @@ export default function countTotalScore(score) {
   totalScore += score;
   return totalScore;
 }
+
+export function resetScore() {
+  totalScore = 0;
+}

@@ -1,11 +1,10 @@
 import '../index.html';
 import '../scss/main.scss';
 
-import renderQuiz from './components/renderQuiz';
-import clickOnAnswer from './components/clickOnAnswer';
-import { currentCategory, returnRandomQuestion } from './helpers/returnQuestionOrCategory';
+import startQuiz from './components/startQuiz';
 
 window.addEventListener('DOMContentLoaded', () => {
-  renderQuiz(currentCategory(), returnRandomQuestion());
-  clickOnAnswer();
+  if (document.querySelector('.first-page')) {
+    startQuiz();
+  }
 });

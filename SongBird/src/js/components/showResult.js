@@ -1,4 +1,9 @@
-import countTotalScore from '../helpers/countScore';
+import countTotalScore, { resetScore } from '../helpers/countScore';
+import quizHtml from '../helpers/quizHtml';
+import renderQuiz from './renderQuiz';
+import { currentCategory, resetCategory, returnRandomQuestion } from '../helpers/returnQuestionOrCategory';
+// eslint-disable-next-line import/no-cycle
+import clickOnAnswer from './clickOnAnswer';
 
 export default function showResult() {
   const app = document.querySelector('.app');
@@ -23,4 +28,17 @@ export default function showResult() {
   }
 
   app.insertAdjacentHTML('beforeend', html());
+
+  const btnBack = document.querySelector('.result-btn');
+
+  btnBack.onclick = () => {
+    resetScore();
+    resetCategory();
+    document.querySelector('.score__number').innerHTML = '0';
+    app.innerHTML = '';
+    app.innerHTML = quizHtml();
+
+    renderQuiz(currentCategory(), returnRandomQuestion());
+    clickOnAnswer();
+  };
 }

@@ -1,4 +1,4 @@
-import { playOrStop } from './audio';
+import playOrStop from './audio';
 
 export default function renderQuiz(currentCategory, randomQuestion) {
   const questionTrack = document.querySelector('#question-track');
@@ -9,7 +9,7 @@ export default function renderQuiz(currentCategory, randomQuestion) {
   renderAnswers(currentCategory);
 
   questionTrack.setAttribute('src', randomQuestion.audio);
-  playOrStop(questionTrack, questionPlayStopButton);
+  playOrStop(questionTrack, questionPlayStopButton, '#question-track-duration');
 }
 
 export function renderAnswers(answers) {
@@ -31,9 +31,10 @@ function cleanDOM() {
      <h3 class="track__title">Послушайте плеер</h3>
      <p>Выберите птицу из списка</p>
   `;
+
   document.querySelector('#question-cover').setAttribute('src', 'img/bird.jpg');
   document.querySelector('#question-track').setAttribute('src', '');
-  document.querySelector('#question__title').innerHTML = '#####';
+  document.querySelector('#question__title').innerHTML = '******';
   document.querySelector('.description__track').innerHTML = html;
 
   const track = document.querySelector('#question-track-duration');
@@ -54,6 +55,7 @@ function createInputDuration() {
   input.setAttribute('max', '100');
   input.setAttribute('min', '0');
   input.setAttribute('type', 'range');
+  input.setAttribute('id', 'question-track-line');
 
   return input;
 }

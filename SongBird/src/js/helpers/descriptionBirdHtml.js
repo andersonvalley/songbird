@@ -19,11 +19,11 @@ export default function descriptionBirdHtml({
                        src="${audio}"></audio>
 
                 <div class="track__inner">
-                  <button class="btn-reset track__play">
+                  <button id="description-play" class="btn-reset track__play">
                     <img src="img/play.svg" alt="play or stop button">
                   </button>
 
-                  <div class="track__duration">
+                  <div id="description-track-duration" class="track__duration">
                     <input class="track__line" value="0" min="0" max="100" step="1" type="range">
                     <div class="track__line_back" style="width: 0"></div>
                     <div class="track__time">

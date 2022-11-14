@@ -69,6 +69,7 @@ ul {
 	border-top-right-radius: 30px;
 	border-top-left-radius: 30px;
 	margin-top: 10px;
+	position: relative;
 }
 
 .btn-reset {
@@ -241,6 +242,12 @@ ul {
 }
 
 @media (max-width: 660px) {
+
+	.first-page__btn {
+		bottom: 11% !important;
+		padding: 9px 100px !important;
+	}
+
 	.score {
 		font-size: 1.4rem;
 		padding: 8px 13px;
@@ -304,7 +311,7 @@ ul {
 }
 
 @media (max-width: 550px) {
-	
+
 	.result-btn {
 		width: 100%;
 	}
@@ -359,5 +366,35 @@ ul {
 	.nav__item {
 		width: 100%;
 		text-align: center;
+	}
+}
+
+.first-page {
+	padding: 0;
+
+	video {
+		width: 100%;
+		object-fit: cover;
+		height: 600px;
+		filter: brightness(0.2);
+		border-radius: 30px;
+		position: relative;
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: 20%;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: $main-accent;
+		border-radius: 100px;
+		padding: 20px 100px;
+		color: #fff;
+		transition: all 200ms ease-in-out;
+		font-size: 1.8rem;
+
+		&:hover {
+			background-color: lighten($main-accent, 5);
+		}
 	}
 }

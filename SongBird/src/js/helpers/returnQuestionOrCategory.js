@@ -9,6 +9,10 @@ export function nextCategory() {
   return categoryIndex;
 }
 
+export function resetCategory() {
+  categoryIndex = 0;
+}
+
 export function currentCategory() {
   return data[categoryIndex];
 }

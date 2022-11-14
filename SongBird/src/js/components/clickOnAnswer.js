@@ -1,7 +1,9 @@
 import descriptionBirdHtml from '../helpers/descriptionBirdHtml';
+// eslint-disable-next-line import/no-cycle
 import toNextQuestion from './nextQuestion';
 import { currentCategory, returnCurrentQuestion } from '../helpers/returnQuestionOrCategory';
 import countTotalScore from '../helpers/countScore';
+import playOrStop from './audio';
 
 export default function clickOnAnswer() {
   const answersList = document.querySelector('.answers__list');
@@ -14,9 +16,12 @@ export default function clickOnAnswer() {
         if (name === item.name) {
           descriptionContainer.innerHTML = '';
           descriptionContainer.insertAdjacentHTML('beforeend', descriptionBirdHtml(item));
-
           // eslint-disable-next-line no-use-before-define
           checkCorrectAnswer(item, e.target, returnCurrentQuestion());
+
+          const track = document.querySelector('#track__description');
+          const playStopButton = document.querySelector('#description-play');
+          playOrStop(track, playStopButton, '#description-track-duration');
         }
       });
     }
@@ -39,7 +44,12 @@ export function checkCorrectAnswer(itemOfQuestion, clickedElement, currentQuesti
   const headerScore = document.querySelector('.score__number');
 
   if (currentQuestion.id === itemOfQuestion.id) {
+    if (errorAudio.play()) {
+      errorAudio.pause();
+      winAudio.play();
+    }
     winAudio.play();
+    document.querySelector('#question-track').pause();
     birdCover.setAttribute('src', currentQuestion.image);
     questionTitle.innerHTML = currentQuestion.name;
 
