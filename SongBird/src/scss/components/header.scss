@@ -59,6 +59,7 @@
 .header__lang.open-modal {
 	.modal {
 		display: block;
+		z-index: 1;
 	}
 }
 

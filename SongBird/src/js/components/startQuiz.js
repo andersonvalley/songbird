@@ -7,19 +7,28 @@ import clickOnAnswer from './clickOnAnswer';
 
 export default function startQuiz() {
   const startQuizBtn = document.querySelector('.first-page__btn');
+  const startQuizBtnHeader = document.querySelector('.first-page__header-btn');
 
-  startQuizBtn.onclick = () => {
-    document.querySelector('.app').classList.remove('first-page');
-    // eslint-disable-next-line no-use-before-define
-    render();
-  };
+  // eslint-disable-next-line no-use-before-define
+  startQuizBtnHeader.onclick = () => clickHandler();
+  // eslint-disable-next-line no-use-before-define
+  startQuizBtn.onclick = () => clickHandler();
 }
 
 export function render() {
   const app = document.querySelector('.app');
+  const startQuizBtnHeader = document.querySelector('.first-page__header-btn');
+  if (startQuizBtnHeader) {
+    startQuizBtnHeader.remove();
+  }
   app.innerHTML = '';
   app.innerHTML = quizHtml();
 
   renderQuiz(currentCategory(), returnRandomQuestion());
   clickOnAnswer();
+}
+
+function clickHandler() {
+  document.body.classList.remove('first-page');
+  render();
 }

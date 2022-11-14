@@ -8,7 +8,7 @@
   <title>SongBird</title>
 </head>
 
-<body class="body">
+<body class="body first-page">
 <div class="container">
   <header class="header">
     <div class="header__top">
@@ -22,7 +22,7 @@
 
       <div class="header__ui">
         <span class="header__score score">
-        <span class="score__text"></span> <span class="score__number">0</span>
+          <span class="score__text"></span> <span class="score__number">0</span>
         </span>
 
         <div class="btn-reset header__lang">
@@ -32,6 +32,10 @@
             <div class="modal__item">en</div>
           </div>
         </div>
+
+        <button class="btn-reset header__lang first-page__header-btn">
+          <img src="img/start.png" alt="start game">
+        </button>
       </div>
     </div>
     <div class="header__bottom">
@@ -41,7 +45,7 @@
     </div>
   </header>
 
-  <main class="app container first-page">
+  <main class="app container">
     <video src="img/video.mp4" autoplay muted loop playsinline></video>
     <button class="btn-reset first-page__btn"></button>
   </main>

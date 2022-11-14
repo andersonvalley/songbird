@@ -15,7 +15,7 @@ export default function showResult() {
   const app = document.querySelector('.app');
   app.innerHTML = '';
 
-  let html = () => `
+  const html = () => `
    <div class="result">
      <h4 class="result__title"></h4>
      <p class="result__text"></p>
@@ -23,17 +23,12 @@ export default function showResult() {
    </div>
   `;
 
-  if (countTotalScore() === '30') {
-    html = () => `
-     <div class="result">
-       <h4 class="result__title result__title-fin"></h4>
-       <p class="result__text"></p>
-       <button class="btn-reset next-question result-btn-fin"></button>
-     </div>
-  `;
+  app.insertAdjacentHTML('beforeend', html());
+
+  if (countTotalScore() === 30) {
+    document.querySelector('.result-btn').remove();
   }
 
-  app.insertAdjacentHTML('beforeend', html());
   checkLocalStorage();
   const btnBack = document.querySelector('.result-btn');
 

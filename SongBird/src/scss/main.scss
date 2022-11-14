@@ -260,11 +260,11 @@ ul {
 	}
 
 	.logo__title {
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 	}
 
 	.logo__subtitle {
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 	}
 
 	.logo__img {
@@ -273,7 +273,7 @@ ul {
 	}
 
 	.nav__item {
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 		padding: 8px 21px;
 	}
 
@@ -311,15 +311,12 @@ ul {
 }
 
 @media (max-width: 550px) {
-
-
 	.modal {
 		left: 50px !important;
 	}
 
-
 	.result-btn {
-		width: 100%;
+		width: 100% !important;
 	}
 
 	.header__top {
@@ -378,6 +375,10 @@ ul {
 .first-page {
 	padding: 0;
 
+	.app {
+		padding: 0;
+	}
+
 	video {
 		width: 100%;
 		object-fit: cover;
@@ -385,6 +386,13 @@ ul {
 		filter: brightness(0.2);
 		border-radius: 30px;
 		position: relative;
+	}
+
+	&__header-btn {
+		img {
+			width: 40px;
+			height: 40px;
+		}
 	}
 
 	&__btn {

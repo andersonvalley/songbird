@@ -35,7 +35,6 @@ export function renderLangDifference(lang = 'ru') {
   const resultBtn = document.querySelector('.result-btn');
   const resultText = document.querySelector('.result__text');
   const resultTitle = document.querySelector('.result__title');
-  const resultTitleFin = document.querySelector('.result__title-fin');
   const navList = document.querySelector('.nav__list');
 
   const category = ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'];
@@ -51,6 +50,7 @@ export function renderLangDifference(lang = 'ru') {
     if (pageBtn) {
       pageBtn.innerHTML = 'Start quiz';
     }
+
     logoSubtitle.innerHTML = 'Try to guess the bird by its voice';
     scoreText.innerHTML = 'Score: ';
 
@@ -84,10 +84,11 @@ export function renderLangDifference(lang = 'ru') {
       resultText.innerHTML = `You completed the quiz and scored ${countTotalScore()} out of 30 possible points`;
     }
     if (resultTitle) {
-      resultTitle.innerHTML = 'Congratulations!';
-    }
-    if (resultTitleFin) {
-      resultTitleFin.innerHTML = 'Congratulations! The game is over!!';
+      if (countTotalScore() === 30) {
+        resultTitle.innerHTML = 'Congratulations! The game is over!';
+      } else {
+        resultTitle.innerHTML = 'Congratulations!';
+      }
     }
   } else if (lang === 'ru') {
     navList.insertAdjacentHTML('beforeend', category.map((item, index) => categoryHtml(item, index)).join(''));
@@ -95,6 +96,7 @@ export function renderLangDifference(lang = 'ru') {
     if (pageBtn) {
       pageBtn.innerHTML = 'Начать викторину';
     }
+
     logoSubtitle.innerHTML = 'Попробуйте угадать птицу по голосу';
     scoreText.innerHTML = 'Набрано очков: ';
 
@@ -128,11 +130,11 @@ export function renderLangDifference(lang = 'ru') {
       resultText.innerHTML = `Вы прошли викторину и набрали ${countTotalScore()} из 30 возможных баллов`;
     }
     if (resultTitle) {
-      resultTitle.innerHTML = 'Поздравляем';
-    }
-
-    if (resultTitleFin) {
-      resultTitleFin.innerHTML = 'Поздравляем! Игра окончена!!';
+      if (countTotalScore() === 30) {
+        resultTitle.innerHTML = 'Поздравляем! Игра окончена!';
+      } else {
+        resultTitle.innerHTML = 'Поздравляем!';
+      }
     }
   }
 }
