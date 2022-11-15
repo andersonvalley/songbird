@@ -6,6 +6,7 @@
 @import "components/description";
 @import "components/footer";
 @import "components/result";
+@import "components/gallery";
 
 
 html {
@@ -179,7 +180,7 @@ ul {
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 855px) {
 
 	.description {
 		.track__inner {

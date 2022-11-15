@@ -36,6 +36,7 @@ export function renderLangDifference(lang = 'ru') {
   const resultText = document.querySelector('.result__text');
   const resultTitle = document.querySelector('.result__title');
   const navList = document.querySelector('.nav__list');
+  const showGallery = document.querySelector('.footer__btn');
 
   const category = ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'];
   const categoryENG = ['Warm up', 'Passerines', 'Forest birds', 'Song birds', 'Predator birds', 'Sea birds'];
@@ -49,6 +50,10 @@ export function renderLangDifference(lang = 'ru') {
     navList.insertAdjacentHTML('beforeend', categoryENG.map((item, index) => categoryHtml(item, index)).join(''));
     if (pageBtn) {
       pageBtn.innerHTML = 'Start quiz';
+    }
+
+    if (showGallery) {
+      showGallery.innerHTML = 'Open gallery';
     }
 
     logoSubtitle.innerHTML = 'Try to guess the bird by its voice';
@@ -95,6 +100,10 @@ export function renderLangDifference(lang = 'ru') {
 
     if (pageBtn) {
       pageBtn.innerHTML = 'Начать викторину';
+    }
+
+    if (showGallery) {
+      showGallery.innerHTML = 'Открыть галлерею';
     }
 
     logoSubtitle.innerHTML = 'Попробуйте угадать птицу по голосу';

@@ -1,5 +1,4 @@
 import '../index.html';
-import '../gallery.html';
 import '../scss/main.scss';
 
 import startQuiz from './components/startQuiz';

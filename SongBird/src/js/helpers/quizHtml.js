@@ -2,6 +2,7 @@ import birdImg from '../../img/bird.jpg';
 import stopImg from '../../img/stop.svg';
 import playImg from '../../img/play.svg';
 import volumeImg from '../../img/volume.svg';
+import volumeOff from '../../img/volumeoff.svg';
 import winAudio from '../../img/win.mp3';
 import errorAudio from '../../img/error.mp3';
 
@@ -27,18 +28,22 @@ export default function quizHtml() {
             </button>
 
             <div id="question-track-duration" class="track__duration">
-              <input id="question-track-line" class="track__line" value="10" min="0" max="100" step="1" type="range">
+              <input id="question-track-line" class="track__line" value="0" min="0" max="100" step="1" type="range">
               <div id="question-track-line-back" class="track__line_back" style="width: 0"></div>
               <div class="track__time">
                 <span class="track__time-current">00:00</span>
                 <span class="track__time-max">00:00</span>
               </div>
             </div>
-
-            <button class="track__volume btn-reset">
-              <img src="${volumeImg}" alt="volume">
-            </button>
           </div>
+          
+          <div class="track__volume">
+            <button id="question-volume" class="track__volume-btn btn-reset">
+                <img src="${volumeOff}" srcset="${volumeImg}" alt="volume">
+            </button>
+             <input id="question-input" class="track__volume-line" value="50" min="0" max="100" step="1" type="range">
+          </div>
+          
         </div>
       </div>
     </section>

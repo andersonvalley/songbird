@@ -3,6 +3,9 @@ import rangeInput from '../helpers/rangeInputUi';
 export default function playOrStop(audioElement, buttonPlay, duration) {
   rangeInput('#question-track-line', '#question-track-line-back', '#question-track');
 
+  // eslint-disable-next-line no-use-before-define
+  // volume('#question-volume', '#question-input', audioElement);
+
   buttonPlay.addEventListener('click', () => {
     if (buttonPlay.dataset.play === 'false') {
       buttonPlay.children[0].setAttribute('srcset', 'img/stop.svg');
@@ -16,6 +19,9 @@ export default function playOrStop(audioElement, buttonPlay, duration) {
       audioElement.pause();
       buttonPlay.setAttribute('data-play', 'false');
     }
+
+    // eslint-disable-next-line no-use-before-define
+    volume('#question-volume', '#question-input', audioElement);
   });
 }
 
@@ -57,4 +63,48 @@ function makeReadableDuration(duration) {
   }
 
   return `00:${time}`;
+}
+
+function volume(btn, input, track) {
+  const volumeBtn = document.querySelector(btn);
+  const volumeInput = document.querySelector(input);
+
+  // eslint-disable-next-line no-use-before-define
+  volumeOff(volumeBtn, volumeInput, track);
+
+  volumeInput.addEventListener('input', (e) => {
+    // eslint-disable-next-line no-param-reassign
+    track.volume = e.target.value / 100;
+
+    // eslint-disable-next-line no-use-before-define
+    checkVolume(track, volumeBtn);
+    // eslint-disable-next-line no-use-before-define
+    volumeOff(volumeBtn, volumeInput, track);
+  });
+}
+
+function checkVolume(track, volumeBtn) {
+  if (track.volume === 0) {
+    volumeBtn.children[0].setAttribute('srcset', 'img/volumeoff.svg');
+  } else {
+    volumeBtn.children[0].setAttribute('srcset', 'img/volume.svg');
+  }
+}
+
+function volumeOff(volumeBtn, volumeInput, track) {
+  // eslint-disable-next-line no-param-reassign
+  volumeBtn.onclick = () => {
+    const volumeImg = volumeBtn.children[0];
+    if (volumeImg.getAttribute('srcset') === 'img/volume.svg') {
+      volumeImg.setAttribute('srcset', 'img/volumeoff.svg');
+      // eslint-disable-next-line no-param-reassign
+      track.volume = 0;
+      // volumeInput.setAttribute('value', '0');
+    } else {
+      volumeImg.setAttribute('srcset', 'img/volume.svg');
+      // eslint-disable-next-line no-param-reassign
+      track.volume = 0.5;
+      // volumeInput.setAttribute('value', '50');
+    }
+  };
 }
