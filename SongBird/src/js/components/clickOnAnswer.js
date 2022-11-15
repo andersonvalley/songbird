@@ -3,7 +3,7 @@ import descriptionBirdHtml from '../helpers/descriptionBirdHtml';
 import toNextQuestion from './nextQuestion';
 import { currentCategory, returnCurrentQuestion } from '../helpers/returnQuestionOrCategory';
 import countTotalScore from '../helpers/countScore';
-import playOrStop from './audio';
+import renderPlayer from './audio';
 import hideButtonLang from '../helpers/hideButtonLang';
 import findCorrectAnswerFlag, { changeCorrectAnswerFlag } from '../helpers/findCorrectAnswerFlag';
 
@@ -98,6 +98,6 @@ function play() {
   const playStopButton = document.querySelector('#description-play');
 
   if (track) {
-    playOrStop(track, playStopButton, '#description-track-duration');
+    renderPlayer(track, playStopButton, '#description-track-duration');
   }
 }

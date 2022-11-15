@@ -8,7 +8,7 @@ import errorAudio from '../../img/error.mp3';
 
 export default function quizHtml() {
   return `
-  <section class="audio">
+  <section class="audio" id="question-audio">
 
       <div class="audio__cover">
         <img src="${birdImg}" class="audio__cover_img" id="question-cover" width="300" alt="bird">
@@ -28,8 +28,9 @@ export default function quizHtml() {
             </button>
 
             <div id="question-track-duration" class="track__duration">
-              <input id="question-track-line" class="track__line" value="0" min="0" max="100" step="1" type="range">
-              <div id="question-track-line-back" class="track__line_back" style="width: 0"></div>
+              <div class="progress">
+                <div class="progress__line"></div>
+              </div>
               <div class="track__time">
                 <span class="track__time-current">00:00</span>
                 <span class="track__time-max">00:00</span>
@@ -37,11 +38,13 @@ export default function quizHtml() {
             </div>
           </div>
           
-          <div class="track__volume">
-            <button id="question-volume" class="track__volume-btn btn-reset">
+          <div id="question-volume" class="track__volume">
+            <button class="track__volume-btn btn-reset">
                 <img src="${volumeOff}" srcset="${volumeImg}" alt="volume">
             </button>
-             <input id="question-input" class="track__volume-line" value="50" min="0" max="100" step="1" type="range">
+             <div class="progress progress-volume">
+                <div class="progress__line progress__line-volume"></div>
+             </div>
           </div>
           
         </div>

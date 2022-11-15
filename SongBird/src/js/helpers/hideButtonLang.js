@@ -1,11 +1,9 @@
-export default function hideButtonLang() {
-  const btn = document.querySelector('.header__lang');
+const btn = document.querySelector('.header__lang');
 
+export default function hideButtonLang() {
   btn.style.display = 'none';
 }
 
 export function showButtonLang() {
-  const btn = document.querySelector('.header__lang');
-
   btn.style.display = 'flex';
 }

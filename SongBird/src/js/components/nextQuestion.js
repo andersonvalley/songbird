@@ -8,7 +8,7 @@ import {
 import data from '../../assets/data';
 // eslint-disable-next-line import/no-cycle
 import showResult from './showResult';
-import playOrStop from './audio';
+import renderPlayer from './audio';
 import { changeCorrectAnswerFlag } from '../helpers/findCorrectAnswerFlag';
 
 export function changeCategory() {
@@ -38,6 +38,6 @@ export default function toNextQuestion() {
     renderQuiz(nextCategory(), returnRandomQuestion());
     changeCategory();
     changeCorrectAnswerFlag(false);
-    playOrStop(questionTrack, questionPlayStopButton, '#question-track-duration');
+    renderPlayer(questionTrack, questionPlayStopButton, '#question-track-duration');
   }, { once: true });
 }

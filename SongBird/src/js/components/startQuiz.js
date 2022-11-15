@@ -6,10 +6,11 @@ import { currentCategory, returnRandomQuestion } from '../helpers/returnQuestion
 import clickOnAnswer from './clickOnAnswer';
 import openGallery from './openGallery';
 
+const startQuizBtnHeader = document.querySelector('.first-page__header-btn');
+const galleryBtn = document.querySelector('.footer__btn');
+
 export default function startQuiz() {
   const startQuizBtn = document.querySelector('.first-page__btn');
-  const startQuizBtnHeader = document.querySelector('.first-page__header-btn');
-  const galleryBtn = document.querySelector('.footer__btn');
 
   // eslint-disable-next-line no-use-before-define
   startQuizBtnHeader.onclick = () => clickHandler();
@@ -20,8 +21,6 @@ export default function startQuiz() {
 
 export function render() {
   const app = document.querySelector('.app');
-  const startQuizBtnHeader = document.querySelector('.first-page__header-btn');
-  const galleryBtn = document.querySelector('.footer__btn');
 
   if (startQuizBtnHeader) {
     startQuizBtnHeader.remove();

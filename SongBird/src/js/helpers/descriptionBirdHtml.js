@@ -24,8 +24,9 @@ export default function descriptionBirdHtml({
                   </button>
 
                   <div id="description-track-duration" class="track__duration">
-                    <input class="track__line" value="0" min="0" max="100" step="1" type="range">
-                    <div class="track__line_back" style="width: 0"></div>
+                    <div id="description__progress" class="progress">
+                      <div id="description__progress-line" class="progress__line"></div>
+                    </div>
                     <div class="track__time">
                       <span class="track__time-current">00:00</span>
                       <span class="track__time-max">00:00</span>

@@ -1,52 +1,82 @@
-import rangeInput from '../helpers/rangeInputUi';
-
-export default function playOrStop(audioElement, buttonPlay, duration) {
-  rangeInput('#question-track-line', '#question-track-line-back', '#question-track');
+export default function renderPlayer(audioElement, buttonPlay, duration, vol) {
+  const durationContainer = document.querySelector(duration);
+  const progressContainer = durationContainer.querySelector('.progress');
 
   // eslint-disable-next-line no-use-before-define
-  // volume('#question-volume', '#question-input', audioElement);
+  volume(audioElement, vol);
 
   buttonPlay.addEventListener('click', () => {
     if (buttonPlay.dataset.play === 'false') {
-      buttonPlay.children[0].setAttribute('srcset', 'img/stop.svg');
-      audioElement.play();
-      buttonPlay.setAttribute('data-play', 'true');
-
       // eslint-disable-next-line no-use-before-define
-      setDuration(audioElement, duration);
+      playMusic(buttonPlay, audioElement, durationContainer);
     } else {
-      buttonPlay.children[0].setAttribute('srcset', 'img/play.svg');
-      audioElement.pause();
-      buttonPlay.setAttribute('data-play', 'false');
+      // eslint-disable-next-line no-use-before-define
+      stopMusic(buttonPlay, audioElement);
     }
-
-    // eslint-disable-next-line no-use-before-define
-    volume('#question-volume', '#question-input', audioElement);
   });
+
+  // eslint-disable-next-line no-use-before-define
+  progressContainer.addEventListener('click', (e) => changeDuration(e, progressContainer.querySelector('.progress__line'), audioElement, durationContainer, buttonPlay));
 }
 
-function setDuration(audioEl, durationEl) {
-  const trackDuration = document.querySelector(durationEl);
-  const timeMax = trackDuration.querySelector('.track__time-max');
-  const timeCurrent = trackDuration.querySelector('.track__time-current');
-  const trackLine = trackDuration.querySelector('.track__line');
-  const trackLineShadow = trackDuration.querySelector('.track__line_back');
+function playMusic(buttonPlay, audioElement, durationContainer) {
+  buttonPlay.children[0].setAttribute('srcset', 'img/stop.svg');
+  audioElement.play();
+  buttonPlay.setAttribute('data-play', 'true');
+
+  // eslint-disable-next-line no-use-before-define
+  setDuration(audioElement, durationContainer, buttonPlay);
+}
+
+function stopMusic(buttonPlay, audioElement) {
+  buttonPlay.children[0].setAttribute('srcset', 'img/play.svg');
+  audioElement.pause();
+  buttonPlay.setAttribute('data-play', 'false');
+}
+
+function setDuration(audioEl, durationContainer, buttonPlay) {
+  const timeMax = durationContainer.querySelector('.track__time-max');
+  const timeCurrent = durationContainer.querySelector('.track__time-current');
+  const progressLine = durationContainer.querySelector('.progress__line');
 
   // eslint-disable-next-line no-use-before-define
   timeMax.innerHTML = makeReadableDuration(audioEl.duration);
 
   audioEl.addEventListener('timeupdate', () => {
+    if (audioEl.currentTime === audioEl.duration) {
+      // eslint-disable-next-line no-param-reassign
+      audioEl.currentTime = 0;
+      // eslint-disable-next-line no-param-reassign
+      durationContainer.querySelector('.progress__line').style.width = `${0}%`;
+      stopMusic(buttonPlay, audioEl);
+    }
+
     // eslint-disable-next-line no-use-before-define
     timeCurrent.innerHTML = makeReadableDuration(audioEl.currentTime);
     const percent = String(Math.floor((audioEl.currentTime / audioEl.duration) * 100));
 
-    trackLine.setAttribute('value', percent);
-    if (+percent < 30 && +percent >= 1) {
-      trackLineShadow.style.width = `${+percent + 1}%`;
-    } else {
-      trackLineShadow.style.width = `${percent}%`;
-    }
-  }, false);
+    // eslint-disable-next-line no-use-before-define
+    updateProgressLine(progressLine, percent);
+  });
+}
+
+function updateProgressLine(progressLine, percent) {
+  // eslint-disable-next-line no-param-reassign
+  progressLine.style.width = `${percent}%`;
+}
+
+function changeDuration(e, progress, audio, durationContainer, buttonPlay) {
+  const width = e.target.clientWidth;
+  const clickX = e.offsetX;
+  const percent = (clickX / width) * 100;
+  const timeByClick = (clickX / width) * audio.duration;
+
+  // eslint-disable-next-line no-param-reassign
+  audio.currentTime = timeByClick;
+
+  updateProgressLine(progress, percent);
+
+  setDuration(audio, durationContainer, buttonPlay);
 }
 
 function makeReadableDuration(duration) {
@@ -65,46 +95,44 @@ function makeReadableDuration(duration) {
   return `00:${time}`;
 }
 
-function volume(btn, input, track) {
-  const volumeBtn = document.querySelector(btn);
-  const volumeInput = document.querySelector(input);
+function volume(audioEl, vol) {
+  const volumeContainer = document.querySelector(vol);
+  const volumeBtn = volumeContainer.querySelector('.track__volume-btn');
+
+  const progressLine = volumeContainer.querySelector('.progress__line-volume');
 
   // eslint-disable-next-line no-use-before-define
-  volumeOff(volumeBtn, volumeInput, track);
-
-  volumeInput.addEventListener('input', (e) => {
-    // eslint-disable-next-line no-param-reassign
-    track.volume = e.target.value / 100;
-
-    // eslint-disable-next-line no-use-before-define
-    checkVolume(track, volumeBtn);
-    // eslint-disable-next-line no-use-before-define
-    volumeOff(volumeBtn, volumeInput, track);
-  });
+  volumeOff(volumeBtn, audioEl, volumeContainer);
+  // eslint-disable-next-line no-use-before-define
+  volumeContainer.querySelector('.progress-volume').addEventListener('click', (e) => updateVolume(e, progressLine, audioEl));
 }
 
-function checkVolume(track, volumeBtn) {
-  if (track.volume === 0) {
-    volumeBtn.children[0].setAttribute('srcset', 'img/volumeoff.svg');
-  } else {
-    volumeBtn.children[0].setAttribute('srcset', 'img/volume.svg');
-  }
+function updateVolume(e, progress, audioEl) {
+  const width = e.target.clientWidth;
+  const clickX = e.offsetX;
+  const percent = (clickX / width);
+
+  updateProgressLine(progress, percent * 100);
+  // eslint-disable-next-line no-param-reassign
+  audioEl.volume = percent;
 }
 
-function volumeOff(volumeBtn, volumeInput, track) {
+function volumeOff(volumeBtn, track, volumeContainer) {
   // eslint-disable-next-line no-param-reassign
   volumeBtn.onclick = () => {
     const volumeImg = volumeBtn.children[0];
+    const line = volumeContainer.querySelector('.progress__line-volume');
+
     if (volumeImg.getAttribute('srcset') === 'img/volume.svg') {
       volumeImg.setAttribute('srcset', 'img/volumeoff.svg');
       // eslint-disable-next-line no-param-reassign
       track.volume = 0;
-      // volumeInput.setAttribute('value', '0');
+      updateProgressLine(line, 0);
     } else {
       volumeImg.setAttribute('srcset', 'img/volume.svg');
       // eslint-disable-next-line no-param-reassign
       track.volume = 0.5;
-      // volumeInput.setAttribute('value', '50');
+      updateProgressLine(line, 50);
     }
   };
 }
