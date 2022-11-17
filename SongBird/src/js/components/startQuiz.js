@@ -4,6 +4,7 @@ import renderQuiz from './renderQuiz';
 import { currentCategory, returnRandomQuestion } from '../helpers/returnQuestionOrCategory';
 // eslint-disable-next-line import/no-cycle
 import clickOnAnswer from './clickOnAnswer';
+// eslint-disable-next-line import/no-cycle
 import openGallery from './openGallery';
 
 const startQuizBtnHeader = document.querySelector('.first-page__header-btn');
@@ -16,7 +17,10 @@ export default function startQuiz() {
   startQuizBtnHeader.onclick = () => clickHandler();
   // eslint-disable-next-line no-use-before-define
   startQuizBtn.onclick = () => clickHandler();
-  galleryBtn.onclick = () => openGallery();
+  galleryBtn.onclick = () => {
+    document.querySelector('.footer__btn').remove();
+    openGallery();
+  };
 }
 
 export function render() {

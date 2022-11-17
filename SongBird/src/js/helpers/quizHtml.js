@@ -29,7 +29,7 @@ export default function quizHtml() {
 
             <div id="question-track-duration" class="track__duration">
               <div class="progress">
-                <div class="progress__line"></div>
+                <div class="progress__line"><div class="progress__point"></div></div>
               </div>
               <div class="track__time">
                 <span class="track__time-current">00:00</span>
@@ -43,7 +43,7 @@ export default function quizHtml() {
                 <img src="${volumeOff}" srcset="${volumeImg}" alt="volume">
             </button>
              <div class="progress progress-volume">
-                <div class="progress__line progress__line-volume"></div>
+                <div class="progress__line progress__line-volume"><div class="progress__point"></div></div>
              </div>
           </div>
           

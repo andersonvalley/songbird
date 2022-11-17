@@ -30,6 +30,7 @@ export function renderAnswers(answers) {
 }
 
 function cleanDOM() {
+  document.body.classList.remove('gallery');
   const html = `
      <h3 class="description__text"></h3>
      <p class="description__choose"></p>

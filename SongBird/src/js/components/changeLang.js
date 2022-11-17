@@ -1,6 +1,8 @@
 import countTotalScore from '../helpers/countScore';
 // eslint-disable-next-line import/no-cycle
 import { render } from './startQuiz';
+// eslint-disable-next-line import/no-cycle
+import openGallery from './openGallery';
 
 export default function clickOnButtonLang() {
   const btn = document.querySelector('.header__lang');
@@ -17,6 +19,10 @@ export default function clickOnButtonLang() {
     // eslint-disable-next-line no-use-before-define
     renderLangDifference(lang);
 
+    if (document.querySelector('.gallery')) {
+      openGallery();
+      return;
+    }
     if (document.querySelector('.first-page')) return;
     render();
   };
@@ -37,6 +43,7 @@ export function renderLangDifference(lang = 'ru') {
   const resultTitle = document.querySelector('.result__title');
   const navList = document.querySelector('.nav__list');
   const showGallery = document.querySelector('.footer__btn');
+  const galleryTitle = document.querySelector('.gallery__title');
 
   const category = ['Разминка', 'Воробьиные', 'Лесные птицы', 'Певчие птицы', 'Хищные птицы', 'Морские птицы'];
   const categoryENG = ['Warm up', 'Passerines', 'Forest birds', 'Song birds', 'Predator birds', 'Sea birds'];
@@ -54,6 +61,9 @@ export function renderLangDifference(lang = 'ru') {
 
     if (showGallery) {
       showGallery.innerHTML = 'Open gallery';
+    }
+    if (galleryTitle) {
+      galleryTitle.innerHTML = 'Gallery';
     }
 
     logoSubtitle.innerHTML = 'Try to guess the bird by its voice';
@@ -133,6 +143,10 @@ export function renderLangDifference(lang = 'ru') {
     }
     if (resultBtn) {
       resultBtn.innerHTML = 'Попробовать еще раз';
+    }
+
+    if (galleryTitle) {
+      galleryTitle.innerHTML = 'Галлерея';
     }
 
     if (resultText) {

@@ -426,6 +426,22 @@ ul {
 		width: 150px;
 	}
 
+	&__point {
+		width: 15px;
+		height: 15px;
+		border-radius: 30px;
+		position: absolute;
+		right: -5px;
+		top: -3px;
+		background-color: $main-accent;
+		cursor: pointer;
+		transition: all 20ms ease-in-out;
+
+		&:hover {
+			background-color: lighten($main-accent, 5);
+		}
+	}
+
 	&__line {
 		background-color: $main-accent;
 		height: 9px;

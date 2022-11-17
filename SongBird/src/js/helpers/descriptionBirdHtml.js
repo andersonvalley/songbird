@@ -1,3 +1,6 @@
+import volumeImg from '../../img/volume.svg';
+import volumeOff from '../../img/volumeoff.svg';
+
 export default function descriptionBirdHtml({
   name, species, audio, image, description,
 }) {
@@ -24,19 +27,25 @@ export default function descriptionBirdHtml({
                   </button>
 
                   <div id="description-track-duration" class="track__duration">
-                    <div id="description__progress" class="progress">
-                      <div id="description__progress-line" class="progress__line"></div>
+                     <div class="progress">
+                      <div class="progress__line"><div class="progress__point"></div></div>
                     </div>
                     <div class="track__time">
                       <span class="track__time-current">00:00</span>
                       <span class="track__time-max">00:00</span>
                     </div>
                   </div>
-
-                  <button class="track__volume btn-reset">
-                    <img src="img/volume.svg" alt="volume">
-                  </button>
                 </div>
+
+                <div id="description-volume" class="track__volume">
+                  <button class="track__volume-btn btn-reset">
+                    <img src="${volumeOff}" srcset="${volumeImg}" alt="volume">
+                  </button>
+                  <div class="progress progress-volume">
+                    <div class="progress__line progress__line-volume"><div class="progress__point"></div></div>
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>

@@ -98,6 +98,6 @@ function play() {
   const playStopButton = document.querySelector('#description-play');
 
   if (track) {
-    renderPlayer(track, playStopButton, '#description-track-duration');
+    renderPlayer(track, playStopButton, '#description-track-duration', '#description-volume');
   }
 }

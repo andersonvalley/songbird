@@ -49,6 +49,14 @@
 
 	&__track {
 		margin-bottom: 10px;
+
+		.track__duration {
+			width: 200px;
+		}
+
+		.track__volume-btn {
+			margin-right: 15px;
+		}
 	}
 }
 

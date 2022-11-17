@@ -19,7 +19,7 @@ export default function renderPlayer(audioElement, buttonPlay, duration, vol) {
   progressContainer.addEventListener('click', (e) => changeDuration(e, progressContainer.querySelector('.progress__line'), audioElement, durationContainer, buttonPlay));
 }
 
-function playMusic(buttonPlay, audioElement, durationContainer) {
+export function playMusic(buttonPlay, audioElement, durationContainer) {
   buttonPlay.children[0].setAttribute('srcset', 'img/stop.svg');
   audioElement.play();
   buttonPlay.setAttribute('data-play', 'true');
@@ -28,7 +28,7 @@ function playMusic(buttonPlay, audioElement, durationContainer) {
   setDuration(audioElement, durationContainer, buttonPlay);
 }
 
-function stopMusic(buttonPlay, audioElement) {
+export function stopMusic(buttonPlay, audioElement) {
   buttonPlay.children[0].setAttribute('srcset', 'img/play.svg');
   audioElement.pause();
   buttonPlay.setAttribute('data-play', 'false');
@@ -79,7 +79,7 @@ function changeDuration(e, progress, audio, durationContainer, buttonPlay) {
   setDuration(audio, durationContainer, buttonPlay);
 }
 
-function makeReadableDuration(duration) {
+export function makeReadableDuration(duration) {
   let time = String(Math.floor(duration));
 
   if (time >= 60) {
@@ -95,7 +95,7 @@ function makeReadableDuration(duration) {
   return `00:${time}`;
 }
 
-function volume(audioEl, vol) {
+export function volume(audioEl, vol) {
   const volumeContainer = document.querySelector(vol);
   const volumeBtn = volumeContainer.querySelector('.track__volume-btn');
 

@@ -38,6 +38,6 @@ export default function toNextQuestion() {
     renderQuiz(nextCategory(), returnRandomQuestion());
     changeCategory();
     changeCorrectAnswerFlag(false);
-    renderPlayer(questionTrack, questionPlayStopButton, '#question-track-duration');
+    renderPlayer(questionTrack, questionPlayStopButton, '#question-track-duration', '#question-volume');
   }, { once: true });
 }
