@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a9e35f3-50ff-41b5-8147-0fd670c37d7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SongBird/src/assets/dataEN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SongBird/src/js/helpers/hideButtonLang.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/img/error.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/img/error.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/changeLang.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/changeLang.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/clickOnAnswer.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/clickOnAnswer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/nextQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/nextQuestion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/renderQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/renderQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/showResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/showResult.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/components/startQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/components/startQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/helpers/descriptionBirdHtml.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/helpers/descriptionBirdHtml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/helpers/renderL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/helpers/returnQuestionOrCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/helpers/returnQuestionOrCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/src/scss/components/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/src/scss/components/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SongBird/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/SongBird/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
