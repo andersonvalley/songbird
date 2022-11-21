@@ -1,9 +1,13 @@
 export default function renderPlayer(audioElement, buttonPlay, duration, vol) {
   const durationContainer = document.querySelector(duration);
   const progressContainer = durationContainer.querySelector('.progress');
+  const progressLine = progressContainer.querySelector('.progress__line');
 
   // eslint-disable-next-line no-use-before-define
   volume(audioElement, vol);
+
+  // eslint-disable-next-line no-use-before-define
+  updateProgressLine(progressLine, '0');
 
   buttonPlay.addEventListener('click', () => {
     if (buttonPlay.dataset.play === 'false') {
@@ -16,7 +20,7 @@ export default function renderPlayer(audioElement, buttonPlay, duration, vol) {
   });
 
   // eslint-disable-next-line no-use-before-define
-  progressContainer.addEventListener('click', (e) => changeDuration(e, progressContainer.querySelector('.progress__line'), audioElement, durationContainer, buttonPlay));
+  progressContainer.addEventListener('click', (e) => changeDuration(e, progressLine, audioElement, durationContainer, buttonPlay));
 }
 
 export function playMusic(buttonPlay, audioElement, durationContainer) {
@@ -104,13 +108,16 @@ export function volume(audioEl, vol) {
   // eslint-disable-next-line no-use-before-define
   volumeOff(volumeBtn, audioEl, volumeContainer);
   // eslint-disable-next-line no-use-before-define
-  volumeContainer.querySelector('.progress-volume').addEventListener('click', (e) => updateVolume(e, progressLine, audioEl));
+  volumeContainer
+    .querySelector('.progress-volume')
+    // eslint-disable-next-line no-use-before-define
+    .addEventListener('click', (e) => updateVolume(e, progressLine, audioEl));
 }
 
 function updateVolume(e, progress, audioEl) {
   const width = e.target.clientWidth;
   const clickX = e.offsetX;
-  const percent = (clickX / width);
+  const percent = clickX / width;
 
   updateProgressLine(progress, percent * 100);
   // eslint-disable-next-line no-param-reassign

@@ -166,11 +166,7 @@ ul {
 
 	.description {
 		.track__play {
-			margin-right: 10px;
-		}
-
-		.track__volume {
-			margin-left: 10px;
+			margin-right: 25px;
 		}
 
 		.audio__cover {
@@ -185,6 +181,10 @@ ul {
 	.description {
 		.track__inner {
 			justify-content: flex-start;
+		}
+
+		.track__volume {
+			left: 0;
 		}
 	}
 
@@ -307,7 +307,7 @@ ul {
 	}
 
 	.description .audio__cover img {
-		height: 110px;
+		height: 140px;
 	}
 }
 
@@ -454,5 +454,27 @@ ul {
 		&-volume {
 			width: 50%;
 		}
+	}
+}
+
+@media (max-width: 855px) {
+	.track__volume {
+		width: fit-content;
+		position: relative;
+		left: 56px;
+	}
+}
+
+@media (max-width: 660px) {
+	.track__volume {
+		position: relative;
+		left: 21px;
+	}
+}
+
+@media (max-width: 430px) {
+	.track__volume {
+		position: relative;
+		left: 46px;
 	}
 }
