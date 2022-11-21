@@ -176,7 +176,7 @@ ul {
 
 }
 
-@media (max-width: 855px) {
+@media (max-width: 890px) {
 
 	.description {
 		.track__inner {
@@ -235,10 +235,6 @@ ul {
 
 	.track__title {
 		margin-bottom: 15px;
-	}
-
-	.track__inner {
-		justify-content: center;
 	}
 }
 
@@ -454,27 +450,5 @@ ul {
 		&-volume {
 			width: 50%;
 		}
-	}
-}
-
-@media (max-width: 855px) {
-	.track__volume {
-		width: fit-content;
-		position: relative;
-		left: 56px;
-	}
-}
-
-@media (max-width: 660px) {
-	.track__volume {
-		position: relative;
-		left: 21px;
-	}
-}
-
-@media (max-width: 430px) {
-	.track__volume {
-		position: relative;
-		left: 46px;
 	}
 }
